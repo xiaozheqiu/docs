@@ -1,0 +1,150 @@
+{
+  "items": [
+    {
+      "title": "Introduction",
+      "items": [
+        {
+          "id": "about",
+          "url": "/qios/introduction/about",
+          "title": "About Qios"
+        }
+      ]
+    },
+    {
+      "title": "How To",
+      "items": [
+        {
+          "id": "general-setup",
+          "url": "/qios/how-to/general-setup",
+          "title": "How to Set Up",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "general-setup-self-onboarding",
+              "url": "/qios/how-to/general-setup#self-onboarding",
+              "title": "Self-Onboarding"
+            },
+            {
+              "id": "general-setup-home",
+              "url": "/qios/how-to/general-setup#home",
+              "title": "Home"
+            },
+            {
+              "id": "general-setup-login",
+              "url": "/qios/how-to/general-setup#login",
+              "title": "Login"
+            }
+          ]
+        },
+        {
+          "id": "manage-product",
+          "url": "/qios/how-to/manage-product",
+          "title": "How to Manage Product",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "manage-product-add-product",
+              "url": "/qios/how-to/manage-product#add-product",
+              "title": "Add Product"
+            },
+            {
+              "id": "manage-product-modify-product",
+              "url": "/qios/how-to/manage-product#modify-product",
+              "title": "Modify Product"
+            },
+            {
+              "id": "manage-product-generate-catalogue-for-chatbot",
+              "url": "/qios/how-to/manage-product#generate-catalogue-for-chatbot",
+              "title": "Generate Catalogue for Chatbot"
+            }
+          ]
+        },
+        {
+          "id": "manage-store",
+          "url": "/qios/how-to/manage-store",
+          "title": "How to Manage Store",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "manage-store-add-a-new-store",
+              "url": "/qios/how-to/manage-store#add-a-new-store",
+              "title": "Add a New Store"
+            },
+            {
+              "id": "manage-store-modify-store",
+              "url": "/qios/how-to/manage-store#modify-store",
+              "title": "Modify Store"
+            }
+          ]
+        },
+        {
+          "id": "activate-your-chatbot",
+          "url": "/qios/how-to/activate-your-chatbot",
+          "title": "How to Activate Your Chatbot",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "activate-your-chatbot-set-up-chatbot-preference",
+              "url": "/qios/how-to/activate-your-chatbot#set-up-chatbot-preference",
+              "title": "Set Up Chatbot Preference"
+            },
+            {
+              "id": "general-setup-activate-waba-and-agent-bot-through-kata-omnichat-account",
+              "url": "/qios/how-to/activate-your-chatbot#activate-waba-and-agent-bot-through-kata-omnichat-account",
+              "title": "Activate WABA and Agent Bot Through Kata Omnichat Account"
+            }
+          ]
+        },
+        {
+          "id": "set-up-bank-account",
+          "url": "/qios/how-to/set-up-bank-account",
+          "title": "How to Set Up Bank Account",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "set-up-bank-account-set-up-bank-information",
+              "url": "/qios/how-to/set-up-bank-account#set-up-bank-information",
+              "title": "Set Up Bank Information"
+            }
+          ]
+        },
+        {
+          "id": "manage-order",
+          "url": "/qios/how-to/manage-order",
+          "title": "How to Manage Order",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "manage-order#new-order",
+              "url": "/qios/how-to/manage-order#new-order",
+              "title": "New Order"
+            },
+            {
+              "id": "manage-order#ready-to-proceed",
+              "url": "/qios/how-to/manage-order#ready-to-proceed",
+              "title": "Ready to Proceed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Release Notes",
+      "items": [
+        {
+          "id": "release-notes-version",
+          "url": "/qios/release-notes/version",
+          "title": "Version",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "version-200",
+              "url": "/qios/release-notes/version#200",
+              "title": "2.0.0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

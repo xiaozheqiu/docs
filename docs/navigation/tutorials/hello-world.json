@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "Creating a Simple Hello World Chatbot",
+          "url": "#",
+          "useAccordion": true,
+          "items": [
+            {
+              "url": "#create-a-project",
+              "title": "Create a Project"
+            },
+            {
+              "url": "#create-a-hello-flow",
+              "title": "Create a Hello Flow"
+            },
+            {
+              "url": "#create-action-for-showing-hello-world",
+              "title": "Create action for showing Hello World"
+            },
+            { "url": "#testing", "title": "Testing" }
+          ]
+        }
+      ]
+    }
+  ]
+}

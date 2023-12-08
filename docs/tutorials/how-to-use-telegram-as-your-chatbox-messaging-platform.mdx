@@ -1,0 +1,164 @@
+---
+layout: tutorial
+id: how-to-use-telegram-for-your-chatbot
+imgSpot: /assets/images/tutorials/spot-telegram.webp
+product: kata-platform
+title: How to use Telegram as your chatbot messaging platform
+date: '2021-08-26T07:00:00+07:00'
+---
+
+Telegram is a free messaging platform that is commonly used for chatbot deployment. This tutorial will learn how to deploy your chatbot in Telegram. So, let’s get started.
+
+## Create a deployment
+
+Deployment is a step to merge all Revisions in Flow, NLU, and CMS so that you can integrate bots into the channel. Before starting channel integration, chatbots must at least have 1 deployment.
+
+1.  In the sidebar, choose the **Deploy** menu. Then, select **Overview**.
+
+<FigureImage
+  caption={{ title: 'Figure 1', description: ` Deploy menu interface.` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image1.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={511}
+  naturalWidth={1600}
+/>
+
+2.  Click the **New Deployment** button. Then it will show a form on the right screen.
+3.  Choose the deployment version. In the Kata Platform, there are 3 deployment versions which are:
+
+    - Major to deploy significant changes, such as change chatbot use-case.
+    - Minor to deploy medium changes, such as adding new features in your chatbot.
+    - Patch to deploy small changes, such as change copy in action.
+
+<FigureImage
+  caption={{ title: 'Figure 2', description: `Create a new deployment` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image2.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={855}
+  naturalWidth={1600}
+/>
+
+4.  Then, click the **Submit** button. If deployment is successful, then the interface will be shown like this.
+
+<FigureImage
+  caption={{ title: 'Figure 3', description: `Deployment has been created.` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image3.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={533}
+  naturalWidth={1600}
+/>
+
+The step after creating a deployment is to create an environment. An environment is a zone in computer science that provides a place to run integrated applications. For example, Kata Platform has 3 environments: development, staging, and production.
+
+1. Choose the menu **Deploy**, then choose **Environment**.
+
+<FigureImage
+  caption={{ title: 'Figure 4', description: `Environment interface.` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image4.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={507}
+  naturalWidth={1600}
+/>
+
+2. In this step, you will create a Development environment. Click the button **Create Environment** in the **Development** card.
+3. Fill in the environment, then click **Create**.
+
+<FigureImage
+  caption={{ title: 'Figure 5', description: `Create an environment interface.` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image5.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={1008}
+  naturalWidth={1600}
+/>
+
+## Integration to a channel
+
+This step will create a chatbot integration with the Telegram messaging platform. Telegram is a free messaging platform to deploy chatbots with a simple setup.
+
+1. In the **Deploy > Environment**, click the **Create Channel** button.
+
+<FigureImage
+  caption={{ title: 'Figure 6', description: `Button deploys channel in a Development environment.` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image6.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={694}
+  naturalWidth={1594}
+/>
+
+2. You will redirect to the **Create Channel** page. Click the **“+ Create Channel”** button to create a new channel.
+3. Fill in the channel name and choose type as Telegram. To fill in the Bot User OAuth Access Token field, we must set up a chatbot in Telegram first. The next step is to open your Telegram application and log in.
+
+Before you start, you need a Telegram account already registered and logged in to your application.
+
+## Connect chatbot to Telegram
+
+1.  The first step is to register your bot to the BotFather account.
+
+<FigureImage
+  caption={{ title: 'Figure 7', description: `Search BotFather account.` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image7.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={600}
+  naturalWidth={802}
+/>
+
+2.  Type `/newbot` and BotFather will ask for your chatbot name. Feel free to use any name you like.
+3.  After that, you will be asked to enter your chatbot username. Remember that your bot username has to either start or end with `bot`.
+4.  Once finished, BotFather will respond with a bot token to access the Telegram Bot API.
+
+<FigureImage
+  caption={{ title: 'Figure 8', description: `Telegram shows bot token.` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image8.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={601}
+  naturalWidth={801}
+/>
+
+5.  Go back to Platform, then copy the bot access token into the channel drawer.
+
+<FigureImage
+  caption={{ title: 'Figure 9', description: `Input bot access token.` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image9.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={767}
+  naturalWidth={1140}
+/>
+
+6.  Click **Create** to get a webhook from the Kata Platform. Then, click the copy button to copy the webhook URL.
+7.  Click on the webhook link to **View** **Channel** detail. It will show a drawer to copy the access token and webhook URL.
+
+<FigureImage
+  caption={{ title: 'Figure 10', description: `View Channel detail` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image10.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={804}
+  naturalWidth={1600}
+/>
+
+8.  Next, open a new tab on your browser and enter this URL. Change `{my_bot_token}` into your own bot token. Also, paste `{kata_platform_webhook_url} `with the copied webhook URL.
+
+```
+https://api.telegram.org/bot{my_bot_token}/setWebhook?url={kata_platform_webhook_url}
+```
+
+9.  Click “Go” or press Enter on the keyboard.
+
+<FigureImage
+  caption={{ title: 'Figure 11', description: `Telegram bot has successfully connected.` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image11.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={164}
+  naturalWidth={449}
+/>
+
+10. If you see the message “Webhook was set,” you’re all set! Let’s try our chatbot. Open Telegram on the desktop or mobile, and start chatting with your bot.
+
+<FigureImage
+  caption={{ title: 'Figure 12', description: `Testing “Hello” in Telegram chatbot` }}
+  src="/assets/images/tutorials/how-to-use-telegram-as-your-chatbox-messaging-platform/image12.webp"
+  alt="How to use Telegram as your chatbot messaging platform"
+  naturalHeight={745}
+  naturalWidth={1600}
+/>
+
+It is the end of this guidance. You can contact [support@kata.ai](mailto:support@kata.ai) if you have any difficulties when implementing this.

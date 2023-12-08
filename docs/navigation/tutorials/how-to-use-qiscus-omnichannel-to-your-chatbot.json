@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "How to use Qiscus omnichannel to your chatbot",
+          "useAccordion": true,
+          "items": [
+            { "url": "#deploy-your-chatbot", "title": "Deploy your chatbot" },
+            {
+              "url": "#register-and-login-to-qiscus",
+              "title": "Register and login to Qiscus"
+            },
+            {
+              "url": "#set-up-qiscus-integration",
+              "title": "Set up Qiscus integration"
+            },
+            {
+              "url": "#finalize-qiscus-set-up",
+              "title": "Finalize Qiscus set up"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

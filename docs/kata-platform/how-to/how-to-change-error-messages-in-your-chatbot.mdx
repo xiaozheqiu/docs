@@ -1,0 +1,60 @@
+---
+id: how-to-change-error-messages-in-your-chatbot
+title: How to Change Error Messages in Your Chatbot to Match Them With Chatbot Persona
+prev: using-sync-api-to-access-third-party-application
+next: general-faqs
+section: How To
+---
+
+In Kata Platform, we have a default error message which will show to end-users “Maaf terjadi kesalahan pada sistem” and “Maaf pesan kamu akan diproses beberapa saat lagi yaa”, then you can check it in the Error Log feature in Kata Platform. Learn more about error messages in the Kata Platform.
+
+You can change the default error message into your language or based on the chatbot's persona. Let’s start.
+
+## Change Default Error Message
+
+These steps are to change the default error message “Maaf terjadi kesalahan pada sistem”.
+
+1. Go to your project, then click the **Flow** menu.
+
+<FigureImage
+  alt="Image 1 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-change-error-messages-in-your-chatbot/image1.webp"
+  caption={{ title: 'Figure 1', description: 'Flow menu located.' }}
+  layout="responsive"
+  naturalHeight={1090}
+  naturalWidth={1748}
+/>
+
+2. In this Flow menu, click the **Configurations** sub-menu.
+
+<FigureImage
+  alt="Image 2 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-change-error-messages-in-your-chatbot/image2.webp"
+  caption={{ title: 'Figure 2', description: 'Configuration menu located.' }}
+  layout="responsive"
+  naturalHeight={1057}
+  naturalWidth={1999}
+/>
+
+3. Write this code about what you wanted to change.
+
+```
+defaultErrorMessage: 'Sorry, there is an error. Please try again.'
+```
+
+4. Click **Save** to save the configuration.
+
+## Change Default Timeout Message
+
+These steps are to change the default timeout message “Maaf pesan kamu sedang diproses yaa”.
+
+1. Go to the **Configurations** sub-menu again.
+2. Write this code about what you want to change.
+
+```
+defaultTimeoutMessage: 'Sorry, there is an error. Please try again.'
+```
+
+3. Click **Save** to save the configuration.
+
+This is the end of the guidance. You can contact <a href="mailto:support@kata.ai">support@kata.ai</a> if you have any difficulties when implementing this.

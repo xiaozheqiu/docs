@@ -1,0 +1,175 @@
+---
+layout: tutorial
+id: how-to-use-qiscus-omnichannel-to-your-chatbot
+title: How to use Qiscus omnichannel to your chatbot
+imgSpot: /assets/images/tutorials/spot-qiscus.webp
+product: kata-platform
+date: '2021-08-26T07:00:00+07:00'
+---
+
+Qiscus is an AI compliant, secure and flexible chat SDK for apps and websites. They also provide a multichannel customer service chat solution that is now popular. This section will learn how to connect our bot with Qiscus through the following steps.
+
+## Deploy your chatbot
+
+1. Click the **Deploy** menu in the left sidebar.
+2. On the Deploy page, click on the **New Deployment** button in the top right corner. It will open up the Create Deployment menu.
+3. Choose any deployment version you want to deploy and fill in the changelog.
+
+<FigureImage
+  caption={{ title: 'Figure 1', description: `Create a new deployment` }}
+  src="/assets/images/tutorials/how-to-use-qiscus-omnichannel-to-your-chatbot/image1.webp"
+  alt="How to use Qiscus omnichannel to your chatbot"
+  naturalHeight={1600}
+  naturalWidth={1133}
+/>
+
+4. Click **Submit** to finish the deployment.
+
+If you already have an environment created, skip these steps.
+
+1. Go to the **Deployments > Environment** menu.
+
+<FigureImage
+  caption={{ title: 'Figure 2', description: `Set up the environment, then set up the Qiscus channel.` }}
+  src="/assets/images/tutorials/how-to-use-qiscus-omnichannel-to-your-chatbot/image2.webp"
+  alt="How to use Qiscus omnichannel to your chatbot"
+  naturalHeight={505}
+  naturalWidth={1600}
+/>
+
+2. Click the **Create Environment** button in any environment. You will see a drawer to create a new environment.
+3. Choose the **development version** you want (in this tutorial, we use the 1.0.0 version)
+4. Fill in the **environment URL**. This environment URL is used for CMS. Learn more about CMS.
+5. Click **Create** to create the environment.
+6. Created environment now has a **Create Channel** button.
+
+Continue to choose Freshchat as a chatbot channel.
+
+1. Click the **Create Channel** button to start adding channels to the environment. It will open up the Channel menu within the environment.
+2. Click the ”**+ Create Channel**” button in the channel table list. It will show a menu to set up the channel.
+3. Choose **Qiscus** in Channel Type.
+
+<FigureImage
+  caption={{ title: 'Figure 3', description: `Create Qiscus channel` }}
+  src="/assets/images/tutorials/how-to-use-qiscus-omnichannel-to-your-chatbot/image3.webp"
+  alt="How to use Qiscus omnichannel to your chatbot"
+  naturalHeight={1238}
+  naturalWidth={1530}
+/>
+
+<Table>
+  <TableHead>
+    <TableHeadRow>
+      <TableHeadCell>Field Name</TableHeadCell>
+      <TableHeadCell>Functionality</TableHeadCell>
+      <TableHeadCell>Limitation</TableHeadCell>
+    </TableHeadRow>
+  </TableHead>
+  <TableBody>
+    <TableBodyRow>
+      <TableBodyCell>Name</TableBodyCell>
+      <TableBodyCell>Your channel name</TableBodyCell>
+      <TableBodyCell>
+        Max. 30 characters must contain only alphanumeric characters (A-Z, a-z, 0-9), `-`, and `_`.
+      </TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Secret Key</TableBodyCell>
+      <TableBodyCell>Key credential from Qiscus</TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Bot Token</TableBodyCell>
+      <TableBodyCell>Key credential from Qiscus </TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Bot Email</TableBodyCell>
+      <TableBodyCell>Registered email that has Qiscus inbox for chatbo </TableBodyCell>
+      <TableBodyCell>Email only </TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>URL</TableBodyCell>
+      <TableBodyCell>Registered email that has Qiscus inbox for chatbot </TableBodyCell>
+      <TableBodyCell>HTTPS website only</TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+</Table>
+
+To fill in the secret key, bot email, and URL, you need to set up a Qiscus inbox. So, let’s start.
+
+## Register and login to Qiscus
+
+1. Register to Qiscus Multichannel Chat Website (<a href="https://multichannel.qiscus.com/" target="_blank"><span>http</span>s://multichannel.qiscus.com/</a>) to create a new app. You will be asked to fill in the information regarding your account.
+2. As soon as you sign up, you will get an email verification from Qiscus Multichannel Chat that you need to verify before using it. So check your email and verify it.
+3. After verifying your account, you can log into the Qiscus Multichannel Chat dashboard via the login page. Please fill in your credentials to get into the dashboard.
+4. Then, go to the **Integration** page.
+
+## Set up Qiscus integration
+
+1. Enable the “**Qiscus Widget**” tab like shown in the picture below.
+
+<FigureImage
+  caption={{ title: 'Figure 4', description: `Enable Qiscus widget.` }}
+  src="/assets/images/tutorials/how-to-use-qiscus-omnichannel-to-your-chatbot/image4.webp"
+  alt="How to use Qiscus omnichannel to your chatbot"
+  naturalHeight={601}
+  naturalWidth={1358}
+/>
+
+2. Copy the snippet code shown on the page and paste it into your website HTML. You can open your HTML later after you integrate the bot.
+3. Next, you need to integrate the bot by enabling the “**Bot Integration**” in the **Integration Page**.
+4. On this page, you will see Agent ID, App ID, Qiscus Secret Key, and URL required in Kata Platform to deploy the Qiscus bot. Copy all fields.
+
+<FigureImage
+  caption={{ title: 'Figure 5', description: ` Bot integration` }}
+  src="/assets/images/tutorials/how-to-use-qiscus-omnichannel-to-your-chatbot/image5.webp"
+  alt="How to use Qiscus omnichannel to your chatbot"
+  naturalHeight={636}
+  naturalWidth={1354}
+/>
+
+The next step is to paste the Agent ID, App ID, Qiscus Secret Key, and URL from Qiscus to the Kata Platform.
+
+1. Go back to Kata Platform (<a href="https://platform.kata.ai" target="_blank"><span>http</span>s://platform.kata.ai</a>)
+2. Paste the Agent ID, App ID, Qiscus Secret Key, and URL there. Here is the example:
+
+<FigureImage
+  caption={{
+    title: 'Figure 6',
+    description: `Paste the Agent ID, App ID, Qiscus Secret Key, and URL into channel configuration.`,
+  }}
+  src="/assets/images/tutorials/how-to-use-qiscus-omnichannel-to-your-chatbot/image6.webp"
+  alt="How to use Qiscus omnichannel to your chatbot"
+  naturalHeight={1230}
+  naturalWidth={1388}
+/>
+
+3. Click **Create** to generate the webhook. You can see a webhook URL from the generated channel.
+4. Click the copy icon to copy the webhook URL.
+
+<FigureImage
+  caption={{ title: 'Figure 7', description: ` Copy webhook URL.` }}
+  src="/assets/images/tutorials/how-to-use-qiscus-omnichannel-to-your-chatbot/image7.webp"
+  alt="How to use Qiscus omnichannel to your chatbot"
+  naturalHeight={455}
+  naturalWidth={1600}
+/>
+
+## Finalize Qiscus set up
+
+1. Go back to Qiscus dashboard <a href="https://multichannel.qiscus.com/web/welcome" target="_blank"><span>http</span>s://multichannel.qiscus.com/web/welcome</a>
+2. Then, go to the “**Bot Integration**” tab. Make sure you’ve enabled it.
+3. Next, paste the webhook URL in “Bot Webhook URL.”
+
+<FigureImage
+  caption={{ title: 'Figure 8', description: `Paste webhook URL` }}
+  src="/assets/images/tutorials/how-to-use-qiscus-omnichannel-to-your-chatbot/image8.webp"
+  alt="How to use Qiscus omnichannel to your chatbot"
+  naturalHeight={636}
+  naturalWidth={1354}
+/>
+
+4. Finally, click “**Connect**”.
+
+This is the end of the guidance. You can contact support@kata.ai if you have any difficulties when implementing this.

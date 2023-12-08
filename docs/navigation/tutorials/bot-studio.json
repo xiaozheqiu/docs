@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "Bot Studio Tutorial",
+          "useAccordion": true,
+          "items": [
+            { "url": "#introduction", "title": "Introduction" },
+            { "url": "#sign-up-to-kata--platform", "title": "Sign up to Kata | Platform" },
+            {
+              "url": "#create-a-project",
+              "title": "Create a Project"
+            },
+            {
+              "url": "#create-fallback-flow",
+              "title": "Create Fallback Flow"
+            },
+            {
+              "url": "#create-order-flow",
+              "title": "Create Order Flow"
+            },
+            {
+              "url": "#create-action-for-pizza-menu",
+              "title": "Create Action for Pizza Menu"
+            },
+            {
+              "url": "#create-action-for-asking-pizza-quantity",
+              "title": "Create Action for Asking Pizza Quantity"
+            },
+            {
+              "url": "#create-confirmation-action",
+              "title": "Create Confirmation Action"
+            },
+            {
+              "url": "#add-mapping-in-ontransit-tab",
+              "title": "Add mapping in onTransit tab"
+            },
+            { "url": "#publish-your-bot", "title": "Publish Your Bot" },
+            { "url": "#testing-your-chatbot", "title": "Testing Your Chatbot" },
+            {
+              "url": "#deploy-your-chatbot",
+              "title": "Deploy Your Chatbot"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

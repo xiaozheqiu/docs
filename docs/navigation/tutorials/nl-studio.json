@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "NL Studio Tutorial",
+          "useAccordion": true,
+          "items": [
+            { "url": "#introduction", "title": "Introduction" },
+            {
+              "url": "#creating-a-nl-model-with-nl-studio",
+              "title": "Creating a NL Model with NL Studio"
+            },
+            {
+              "url": "#adjusting-the-dataset",
+              "title": "Adjusting the Dataset"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

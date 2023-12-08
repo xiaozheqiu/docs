@@ -1,0 +1,8 @@
+{
+  "name": "qios",
+  "cwd": "./",
+  "src": "./docs/qios",
+  "filePattern": "**/*.mdx",
+  "dist": "./markdown-to-json/outputs/qios.json",
+  "metadata": true
+}

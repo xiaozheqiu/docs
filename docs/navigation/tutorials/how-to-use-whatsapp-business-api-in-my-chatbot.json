@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "How to use WhatsApp Business API in my chatbot",
+          "useAccordion": true,
+          "items": [
+            { "url": "#bot-response-types", "title": "Bot response types" },
+            {
+              "url": "#how-to-deploy",
+              "title": "How to Deploy"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

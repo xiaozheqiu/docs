@@ -1,0 +1,671 @@
+---
+id: how-to-use-kataml-to-build-your-chatbot
+title: How to Use KataML to Build Your Chatbot
+prev: how-to-use-nl-prediction-api-to-help-you-using-the-nlu-in-your-app
+next: general-faqs
+section: How To
+---
+
+Kata ML is a descriptive YAML-based language for defining bots. The entry-point of KataML-based bot is the bot.yml file.
+
+## Specification
+
+The root structure of bot.yml is as following:
+
+```
+# kataML schema definition
+schema: kata.ai/schema/kataml/1.0
+
+# Bot name
+name: test-bot
+# Bot description
+desc: Some Bot
+# Bot language
+lang: id
+
+# Flow definition
+flows:
+	 # flowName and description
+	 someFlow:
+		# you can include other files using $include directive
+		intents: $include(./some/path)
+
+# Method definitions
+methods:
+	 # method definition in javascript
+	 someMethod(x): x*x
+
+# NLU definition
+nlus:
+	 # define NLU to be used in this bot
+	 someNlu: ...
+
+# Config
+config:
+	 # free to define your nested configuration
+
+```
+
+## Include Directive
+
+KataML support `$include` directive to include definition from other files. Using this directive it is easier to structure your bot project.
+Example:
+
+```
+config: $include(./config.yml)
+```
+
+## Building a flow
+
+A flow consists of following definitions:
+
+- `intents` :`Dict<Intent>` which means intent definitions.
+- `states` : `Dict<State>` which means state definitions.
+- `actions` : `Dict<Action>` which means action definitions.
+- `methods` : `Dict<string>` which means Flow-specific method definitions
+  Additionally a flow can be set as following:
+- `active` : `boolean` which means you can enable/disable a flow by setting the active field of a flow.
+- `volatile` : `boolean` which means you can set it to true, then it will close the flow whenever it’s outside the flow.
+- `expire` : `number` which means it will set flow to expire after a specified number of milliseconds.
+
+## Building an intent
+
+Intent can be defined as following:
+
+```
+intents:
+ <name>: <Intent>
+```
+
+The intent description contains following fields:
+
+- `type` : `"text" | "command" | "data"` which is to define type of the message to be associated with this intent.
+- `condition` : `string | string[]` which is condition filter to rule out certain intents to be selected.
+- `classifier` : `Classifier | Classifier[]` which is classifier definition.
+- `attributes` : `Dict<Attribute>` which is attributes / slot filling associated with the intent.
+- `fallback` : `boolean` which means define intent as fallback intent.
+- `priority` : `number` which means set priority of an intent for the selection process
+- `initial` : `boolean` which means set whether intent can be triggered only in current flow or from other flow as well.
+
+## Defining condition
+
+Condition is every valid javascript expression returning a boolean. Available variables are:
+
+- `type` : `string` which is a message type.
+- `payload` : `JsonObject` which means message payload.
+- `content` : `string` which means message content.
+- `context` : `JsonObject` which means flow context.
+- `data` : `JsonObject` which means session data.
+- `config` : `JsonObject` which means bot config.
+  Example:
+
+```
+condition: type == 'text' && content == 'hello' && !context.completed
+```
+
+## Building classifier
+
+Classifier consists of following fields:
+
+- `nlu` : `string` which means name of defined NLU or NLU-type.
+- `hint` : `string` which means prepend message with a text fragment.
+- `match` : `string` which means match the result of the classifier with a specific string.
+- `options` : `JsonObject` which means override NLU options.
+- `process` : `method | method[]` which means postprocess intent using methods.
+  Example:
+
+```
+classifier:
+	 nlu: topicClassifier
+	 match: food
+	 options:
+		lowerCase: true
+		threshold: 0.8
+```
+
+Example Multiple Classifiers:
+
+```
+classifier:
+ - nlu: topicClassifier
+	match: food
+ - nlu: keywordClassifier
+	match: food
+```
+
+Example mapping label using dict:
+
+```
+classifier:
+	nlu: topicClassifier
+	match: food
+	dict:
+	 food: [food_a, food_b], # group multiple classes to one
+	 test: testing # change label
+```
+
+## Defining attributes
+
+Attribute consist of following fields:
+
+- `nlu` : `string` which means name of defined NLU or NLU-type.
+- `hint` : `string` which means prepend message with a text fragment.
+- `path` : `string` which means result path to be taken.
+- `options` : `JsonObject` which means override NLU options.
+- `process` : `method | method[]` which means postprocess intent using methods.
+  Example:
+
+```
+attributes:
+city:
+	nlu: genericNER
+	path: LOCATION
+	options:
+	threshold: 0.6
+	process:
+	  - filterCity
+	  - capitalize
+```
+
+Example normalizing using dict:
+
+```
+attributes:
+	 city:
+		nlu: genericNER
+		path: location
+		options:
+		  threshold: 0.6
+		dict:
+		  jakarta: [jkt, jekardah, jakarta]
+		  bandung: [bdg, bandung]
+		  default: invalid
+```
+
+## Building a state
+
+States can be defined as following:
+
+```
+states:
+	<name>: <State>
+```
+
+The state description contains following fields:
+
+- `initial` : `boolean` which means specify initial state.
+- `action` : `string | StateAction | StateAction[]` which means specify action to be executed.
+- `end` : `boolean` which means specify end state.
+- `transitions` : `Dict<Transition|string>` which means specify transitions.
+- `float` : `Transition` which means specify floating transition
+- `enter` : `Mapping | method` which means specify mapping or method to be executed when state is entered.
+- `transit` : `Mapping | method` which means specify mapping or method to be executed when transition is started.
+- `exit` : `Mapping | method` which means specify mapping or method to be executed when state is exited.
+
+## Defining mapping
+
+Mapping is a procedure to update context / data. available variables are:
+
+- `attributes` : `JsonObject` which is attributes that is captured by intent
+- `intent` : `string` which is captured intent
+- `content` : `string` which is message content
+- `payload` : `JsonObject` which is message payload
+- `context` : `JsonObject` which is flow context
+- `data` : `JsonObject` which is session data
+  Example:
+
+```
+enter:
+	 data.name: attributes.name
+	 context.count: (context.count || 0)++
+```
+
+Example using method:
+
+```
+enter: someMapping
+```
+
+method definition:
+
+```
+methods:
+	someMapping(ctx): > # {intent, attributes, content, payload, data, context}
+		ctx.data.name = ctx.attributes.name;
+		ctx.context.count++;
+		return ctx;
+```
+
+## Building state actions
+
+Action can be defined as a single action or multiple actions. The state action definition contains following fields:
+
+- `name` : `string` is name of defined action or action type
+- `condition` : `string` is condition filter
+- `options` : `JsonObject` is override action options
+  Example:
+
+```
+action:
+	 name: reply
+	 options:
+		text: 'hi!'
+```
+
+Example multiple actions:
+
+```
+action:
+	 - name: reply
+		condition: context.mood = 'good'
+		options:
+		  text: 'hi $(data.name)!'
+	 - name: reply
+		condition: context.mood = 'bad'
+		options:
+		  text: 'apaan sih kamu!'
+```
+
+You can simplify state actions (if you only have 1 action in some states) :
+
+```
+action: someAction
+```
+
+## Building transition
+
+Transition define condition that leads to moving from one state to the other state. A transition is defined as following:
+
+```
+transitions:
+	 <destination>: <Transition>
+```
+
+Field definition:
+
+- `condition` : `string` which means condition that trigger the transition
+- `priority` : `number` which means priority for transition selection
+- `fallback` : `boolean` which means define fallback when no other transition matches
+- `mapping` : `Mapping | method` which means define mapping or method that is triggered during this transition
+  Example:
+
+```
+transitions:
+	 askDob:
+		condition: "intent == 'yes' && !context.personGender && context.verifyGender"
+		mapping:
+		  context.personGender: 'context.verifyGender'
+		  context.verifyGender: 'null'
+```
+
+You can simplify transitions definition :
+
+```
+transitions
+	askDob: "intent == 'yes' && !context.personGender"
+```
+
+## Building a floating State
+
+Normally it is tedious if we have to define a transition to a state that is available in every state. e.g. Cancel state. To mitigate this we can define a floating transition. The system will automatically attach this transition in every state.
+
+```
+float: <Transition>
+```
+
+## Defining events
+
+We can define a mapping or method that is triggered during these events:
+
+- `enter` which means this event is triggered when entering a state
+- `transit` which means this event is triggered before transition process
+- `exit` which means this event is triggered after transition process
+
+## Building Meta Context
+
+Additional meta context accessible in states at `context.<meta>`:
+
+- `$start` : `boolean` which means true if state is initial state
+- `$to` : `string` which means describe destination state. Available during exit
+- `$from` : `string` which means describe origin state. Available during enter
+- `$end` : `boolean` which means true if state is end state
+  Example:
+
+```
+states:
+	 stateA:
+		enter:
+		  context.stateACount: (context.stateACount || 0)++
+		transit:
+		  context.name: attributes.name || null
+		exit:
+		  context.stateA.to: context.$to
+```
+
+## Building actions
+
+Actions can be defined as following:
+
+```
+actions:
+ <name>: <Action>
+```
+
+Following fields are available:
+
+- `type` : `string` which means action type.
+- `method` : `method` which means specify if action type is method
+- `options`: `JsonObject` which means action options
+- `condition` : `string` which means action condition
+  Example:
+
+```
+actions:
+	 askName:
+		type: reply
+		options:
+		  text: 'nama kamu siapa?'
+```
+
+## Flow Switching
+
+Whenever bot reaches a state that is not an end state, the flow will stay open. The following message will trigger a transition to the next state. There is a case where the incoming message cannot be handled by any intents in current flow. In that case it will try to find a flow with a matching intent. When the second flow closes, the system will create internal message reenter.
+
+```
+{
+	type: "command",
+	content: "reenter",
+	payload: null
+}
+```
+
+this reenter need to be catched by the previous flow that is open:
+
+```
+intents:
+	reenter:
+		type: command
+		condition: content == "reenter"
+```
+
+## Building NLU
+
+### Definition
+
+A NLU consists of following definitions:
+
+- `type`: `string` which means NLU Type
+- `method` : `method` which means method name
+- `options` : `JsonObject` which means Override NLU options
+- `process` : `method | method[]` which means Postprocess intent using methods
+  Example:
+
+```
+nlus:
+	 genericNer:
+		type: verstandTagger
+		options:
+		model: <id>
+```
+
+### Keyword NLU
+
+```
+myNLU:
+	type: keyword
+	options:
+		case: boolean # true for case sensitive
+		exact: boolean # true to match only exact message
+		default: string # default key if nothing match
+		keywords: # <key> : [<match values>]
+		<key>: string[]
+```
+
+Output:
+
+```
+string
+```
+
+Example:
+
+```
+options:
+	 keywords:
+		'American Thin Crust':
+		  - thin crust
+		  - american thin crust
+		  - american
+		'Hawaiian':
+		  - hawai
+		  - hawaiian
+```
+
+### Regex NLU
+
+```
+myRegex:
+	 type: regex
+	 options:
+		regex: <regex as string>
+		index: number # optional
+```
+
+or
+
+```
+myRegex:
+	type: regex
+	options:
+		regex: <regex as string>
+		index:
+		<key>: number
+```
+
+or
+
+```
+myRegex:
+	 type: regex
+	 options:
+		regex:
+		 <key>: <regex as string>
+```
+
+Example with index:
+
+```
+nlus:
+	 nameNLU:
+		type: regex
+		options:
+		  regex: 'nama saya (.+)'
+		  index: 1
+
+## usage in intent
+intents:
+	 giveName:
+		attributes:
+		  name:
+		  nlu: nameNLU
+```
+
+Example with multiple index:
+
+```
+nlus:
+	 nameNLU:
+		type: regex
+		options:
+		  regex: 'nama (saya|kamu) (.+)'
+		  index:
+		  who: 1
+		  name: 2
+
+## usage in intent
+intents:
+	 giveName:
+		attributes:
+		  name:
+		  nlu: nameNLU
+		  path: who
+		  who:
+		  nlu: nameNLU
+		  path: name
+```
+
+Example with multiple regex:
+
+```
+nlus:
+	 regexNlu:
+	type: regex
+	options:
+		  regex:
+		  name: 'nama saya (.+)'
+		  email: 'w+@w+.w+'
+
+## usage in intent
+intents:
+	 giveName:
+		attributes:
+		  name:
+		  nlu: regexNlu
+		  path: name
+		  who:
+		  nlu: regexNLU
+		  path: email
+```
+
+### NL Studio NLU
+
+```
+mynl:
+	 type: nl
+	 options:
+		nluId: <nluId>
+		token: <nluToken>
+		output:
+		  <type>
+		  # raw - return the raw prediction result from NL Studio
+		  # value - return the value of each NLU's entity
+		  # phrase - only for NL Studio entity type 'phrase'
+		entity: <entityName> # only for output: phrase
+		threshold: <number> # confidence rate, if less than treshold bot wouldn't recognize as this intent
+		flatten: true # optional, default false
+```
+
+Examples:
+
+```
+## usage in intent for output type value
+nlus:
+	 mynl:
+		type: nl
+		options:
+		  nluId: <nluId>
+		  output: value
+		  threshold: 0.5
+		  flatten: true
+
+intents:
+	 yes:
+		classifier:
+		  nlu: mynl
+		  expression: "intent == 'yes'" # <entityName> == <label> of entity type 'trait'
+	 name:
+		classifier:
+		  nlu: mynl
+		  expression: ner # <entityName> of entity type 'phrase'
+		attributes:
+		  person:
+		  nlu: mynl
+		  path: ner # <entityName>
+
+## usage in intent for output type phrase
+nlus:
+	 mynl2:
+		type: nl
+		options:
+		  nluId: <nluId>
+		  output: phrase
+		  entity: <entityName>
+		  threshold: 0.7
+
+intents:
+	credentials:
+		classifier:
+		  nlu: mynl # use the previous bot's nlu
+		  expression: "intent == 'giveCredentials'"
+		attributes:
+		  person:
+		  nlu: mynl2
+		  path: person   # <label> of mynl2's entity <enityName>
+		  location:
+		  nlu: mynl2
+		  path: location # <label> of mynl2's entity <enityName>
+		 name:
+		classifier:
+		  nlu: mynl2
+		  expression: person # <label> of mynl2's entity <enityName>
+		attributes:
+		  person:
+		  nlu: mynl2
+		  path: person # <label>
+
+# alternative approach
+nlus:
+	mynl3:
+		type: nl
+		options:
+		nluId: <nluId>
+
+intents:
+	 yes:
+		classifier:
+		  nlu: mynl3
+		  options:
+		  output: value
+		  threshold: 0.5
+		  flatten: true
+		  expression: "intent == 'yes'"
+		attributes:
+		  person:
+		  nlu: mynl3
+		  path: person
+		  options:
+			  output: phrase
+			  entity: ner
+			  threshold: 0.7
+```
+
+## Method
+
+### Inline Method
+
+Example:
+
+```
+methods:
+	someMethod(x): "
+	  return x*x;
+	"
+```
+
+### Method from File
+
+Example:
+
+```
+method:
+	 otherMethod(x):
+		code: $include(./some/code.js)
+		entry: module.exports
+
+// ./some/code.js
+
+function otherMethod(x) {
+	 return x * x;
+}
+module.exports = otherMethod;
+```

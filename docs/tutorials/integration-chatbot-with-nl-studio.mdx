@@ -1,0 +1,102 @@
+---
+layout: tutorial
+id: integration-chatbot-with-nl-studio
+title: Integration Chatbot with NL Studio Tutorial
+imgSpot: /assets/images/tutorials/spot-nl-studio-integration.webp
+product: kata-platform
+prev: nl-studio-tutorial
+next: integration-chatbot-with-cms-studio
+date: '2018-09-09T07:00:00+07:00'
+---
+
+## Introduction
+
+In this tutorial, we will create a simple conversation bot and integrated to NL studio. For pre-condition, you must create a bot by follow this tutorial in here [Bot studio tutorial](/tutorials/bot-studio). You will create a NLModel which able to process pizza ordering orders. Further explanation for NLStudio, you may see in here [NL Studio Guideline](/tutorials/nl-studio)
+
+Let's start !
+
+## Create Entity
+
+Assumed you already logged in and visit your project. Go to NL Studio menu by click NL menu
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-1.webp" alt="bnl-1" naturalHeight={854} naturalWidth={1784} />
+
+Then, click on Create Entity to start.
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-2.webp" alt="bnl-2" naturalHeight={1256} naturalWidth={2324} />
+
+Click on Create. Here is a view after you create intent `entity`
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-3.webp" alt="bnl-3" naturalHeight={1046} naturalWidth={2476} />
+
+## Conduct Data Training
+
+After you created the entity, the next step is data training. You have to enter a sentence to train `intent` trait. Click on Training menu
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-4.webp" alt="bnl-4" naturalHeight={405} naturalWidth={1006} />
+
+Then, you are able to enter sentence to train data. Put a sentence “I want to order pizza” and press enter in your keyboard
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-5.webp" alt="bnl-5" naturalHeight={1480} naturalWidth={3356} />
+
+Afterward, click on Add Trait and select `intent:order`.
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-6.webp" alt="bnl-6" naturalHeight={425} naturalWidth={1008} />
+
+Next, click “Train” button to train entity you has created. The final display will look like this
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-7.webp" alt="bnl-7" naturalHeight={1198} naturalWidth={3184} />
+
+Entity shall train a lot for precisely understanding user's input, if you're doing training data in several sentences.
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-8.webp" alt="bnl-8" naturalHeight={1478} naturalWidth={2608} />
+
+If you've done enough training, you are able to try testing by click "Test NLU" button. This feature will support you to predict more data.
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-9.webp" alt="bnl-9" naturalHeight={1466} naturalWidth={2054} />
+
+## Publish Your NL
+
+Then, publish your NL for save training data and NL model.
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-10.webp" alt="bnl-10" naturalHeight={934} naturalWidth={1784} />
+
+## Integration with NLUs
+
+Next step is start integration with your bot using created entity. To get started, go to Bot menu and click NLUs sub-menu.
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-11.webp" alt="bnl-11" naturalHeight={1214} naturalWidth={2352} />
+
+Click on Create NLU and fill in as follow
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-12.webp" alt="bnl-12" naturalHeight={1252} naturalWidth={1976} />
+
+NLUid is found in NL menu in Setting. Click on NL menu, then click Settings
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-13.webp" alt="bnl-13" naturalHeight={1390} naturalWidth={2648} />
+
+Afterward, copy NLUid into NLUid field in Create NLU drawer as follow
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-14.webp" alt="bnl-14" naturalHeight={1268} naturalWidth={1934} />
+
+Click Create to continue. Successfully created NLUs will be appeared as follow
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-15.webp" alt="bnl-15" naturalHeight={1518} naturalWidth={2692} />
+
+## Integration with Bot
+
+Next, go to Conversation Flows and click on tab Intents. Select `orderTxt` that you've created earlier to handle user input (you may see this tutorial [Bot studio tutorial](/tutorials/bot-studio/)), then add a new classifier as below
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-16.webp" alt="bnl-16" naturalHeight={1238} naturalWidth={2248} />
+
+Click Update to save updated Intent.
+
+## Testing Your Bot
+
+Click on Publish bot to save your bot.
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-17.webp" alt="bnl-17" naturalHeight={1038} naturalWidth={2096} />
+
+Voila, your bot is successfully integrated. Let's start in bot emulator.
+
+<FigureImage src="/assets/images/tutorials/bot-nl/bnl-18.webp" alt="bnl-18" naturalHeight={1198} naturalWidth={2098} />

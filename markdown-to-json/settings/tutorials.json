@@ -1,0 +1,9 @@
+{
+  "name": "tutorials",
+  "cwd": "./",
+  "src": "./docs/tutorials",
+  "filePattern": "*.mdx",
+  "dist": "./markdown-to-json/outputs/tutorials.json",
+  "metadata": true,
+  "deterministicOrder": false
+}

@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "Integration Chatbot with NL Studio Tutorial",
+          "useAccordion": true,
+          "items": [
+            { "url": "#introduction", "title": "Introduction" },
+            { "url": "#create-entity", "title": "Create Entity" },
+            { "url": "#conduct-data-training", "title": "Conduct Data Training" },
+            { "url": "#publish-your-nl", "title": "Publish Your NL" },
+            { "url": "#integration-with-nlus", "title": "Integration with NLUs" },
+            { "url": "#integration-with-bot", "title": "Integration with Bot" },
+            { "url": "#testing-your-bot", "title": "Testing Your Bot" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "introduction-about": {
+    "previous": null,
+    "next": {
+      "id": "get-started",
+      "url": "/business-dashboard/how-to/get-started",
+      "title": "Get Started with WhatsApp Business Dashboard"
+    }
+  },
+  "get-started": {
+    "previous": {
+      "id": "introduction-about",
+      "url": "/business-dashboard/introduction/about",
+      "title": "About Business Dashboard"
+    },
+    "next": {
+      "id": "how-to-use-trial",
+      "url": "/business-dashboard/how-to/how-to-use-trial",
+      "title": "How to Use Trial Experience"
+    }
+  },
+  "how-to-use-trial": {
+    "previous": {
+      "id": "get-started",
+      "url": "/business-dashboard/how-to/get-started",
+      "title": "Get Started with WhatsApp Business Dashboard"
+    },
+    "next": {
+      "id": "how-to-register",
+      "url": "/business-dashboard/how-to/how-to-register",
+      "title": "How to Register a New WhatsApp Number"
+    }
+  },
+  "how-to-register": {
+    "previous": {
+      "id": "how-to-use-trial",
+      "url": "/business-dashboard/how-to/how-to-use-trial",
+      "title": "How to Use Trial Experience"
+    },
+    "next": {
+      "id": "manage-wa-credit",
+      "url": "/business-dashboard/how-to/manage-wa-credit",
+      "title": "Manage Your Broadcast Credit"
+    }
+  },
+  "manage-wa-credit": {
+    "previous": {
+      "id": "how-to-register",
+      "url": "/business-dashboard/how-to/how-to-register",
+      "title": "How to Register a New WhatsApp Number"
+    },
+    "next": {
+      "id": "manage-your-whatsapp-message-templates",
+      "url": "/business-dashboard/how-to/whatsapp-message-templates",
+      "title": "Manage Your WhatsApp Message Templates"
+    }
+  },
+  "manage-your-whatsapp-message-templates": {
+    "previous": {
+      "id": "manage-wa-credit",
+      "url": "/business-dashboard/how-to/manage-wa-credit",
+      "title": "Manage Your Broadcast Credit"
+    },
+    "next": {
+      "id": "manage-broadcast",
+      "url": "/business-dashboard/how-to/manage-broadcast",
+      "title": "Manage Your Broadcast"
+    }
+  },
+  "manage-broadcast": {
+    "previous": {
+      "id": "manage-your-whatsapp-message-templates",
+      "url": "/business-dashboard/how-to/whatsapp-message-templates",
+      "title": "Manage Your WhatsApp Message Templates"
+    },
+    "next": {
+      "id": "how-to-use-analytics",
+      "url": "/business-dashboard/how-to/use-analytics",
+      "title": "How to Use Analytics"
+    }
+  },
+  "how-to-use-analytics": {
+    "previous": {
+      "id": "manage-broadcast",
+      "url": "/business-dashboard/how-to/manage-broadcast",
+      "title": "Manage Your Broadcast"
+    },
+    "next": {
+      "id": "conversation-based-pricing",
+      "url": "/business-dashboard/how-to/conversation-based-pricing",
+      "title": "Conversation-Based Pricing"
+    }
+  },
+  "conversation-based-pricing": {
+    "previous": {
+      "id": "how-to-use-analytics",
+      "url": "/business-dashboard/how-to/use-analytics",
+      "title": "How to Use Analytics"
+    },
+    "next": { "id": "release-notes-version", "url": "/business-dashboard/release-notes/version", "title": "Version" }
+  }
+}

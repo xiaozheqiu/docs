@@ -1,0 +1,144 @@
+{
+  "app": {
+    "config": "./markdown-to-json/settings/qios.json",
+    "cwd": "./",
+    "deterministicOrder": false,
+    "display": true,
+    "dist": "./markdown-to-json/outputs/qios.json",
+    "filePattern": "**/*.mdx",
+    "ignore": "",
+    "port": 3001,
+    "server": false,
+    "src": "./docs/qios",
+    "name": "qios",
+    "metadata": true,
+    "version": "1.6.1"
+  },
+  "data": [
+    {
+      "contents": "Set Up Chatbot Preference 1 Go to Pengaturan gt Chatbot 2 Choose the option for Panggilan pelanggan and Panggilan chatbot whether you want to use default setting or you want to modify the customer s name and chatbot s name 3 Fill in the maximum distance to accept the order the maximum distance from system is up to 30 km Activate WABA and Agent Bot through Kata Omnichat Account 1 Before opening your store you have to create a WABA inbox then set up and activate the agent bot through Kata Omnichat Learn more about Kata Omnichat kata omnichat configure your agent chatbot setup agent bot in kata omnichat and creating the agent bot tutorials create simple bot handover from chatbot to agent 2 Copy and paste the access token from agent bot in Kata Omnichat to Qios Dashboard in Pengaturan gt WhatsApp Business API and click _ Aktifkan webhook URL _ button 3 Copy and paste the webhook URL that has been generated to Kata Omnichat in Agent Bot configuration",
+      "excerpt": "Set Up Chatbot Preference 1 Go to Pengaturan gt Chatbot 2 Choose the option for Panggilan pelanggan and Panggilan chatbot whether you want to use default setting or you want to",
+      "meta": {
+        "createdAt": "2022-06-07T01:36:57.451Z",
+        "lastModified": "2022-06-07T01:36:57.451Z",
+        "size": 2089,
+        "formattedSize": "2.0 KB",
+        "absolutePath": "/qios/how-to/activate-your-chatbot"
+      },
+      "product": "qios",
+      "type": "docs",
+      "id": "activate-your-chatbot",
+      "title": "How To Activate Your Chatbot",
+      "prev": "manage-store",
+      "next": "set-up-bank-account",
+      "section": "How To"
+    },
+    {
+      "contents": "Self onboarding 1 Go to and click Daftar After that fill in your email and Password 2 After clicking the Daftar button you will get an email to verify your account 3 After you verified your email you will be redirected to the Onboarding page 4 In the Onboarding page you have to fill in the Personal Information Business Information Create Store and do some set up for your chatbot 5 After you fill all the forms you will be redirected to Qios Homepage Home 1 As a first time user you can see that you need to add your product first then set up the bot by connecting to WhatsApp through setting up the agent bot in Kata Omnichat 2 If you ve already added your product and connect your bot to WhatsApp then you will be ready to start selling your product 3 You can track the new order the order that is ready to proceed and the finished order in this homepage Also you can see the product with low stock best seller product and basic report Login 1 Go to 2 Fill in Email and Password then click Masuk",
+      "excerpt": "Self onboarding 1 Go to and click Daftar After that fill in your email and Password 2 After clicking the Daftar button you will get an email to verify your account",
+      "meta": {
+        "createdAt": "2022-06-07T01:36:57.451Z",
+        "lastModified": "2022-06-07T01:36:57.451Z",
+        "size": 2663,
+        "formattedSize": "2.6 KB",
+        "absolutePath": "/qios/how-to/general-setup"
+      },
+      "product": "qios",
+      "type": "docs",
+      "id": "general-setup",
+      "title": "How To Setup",
+      "prev": "about",
+      "next": "manage-product",
+      "section": "How To"
+    },
+    {
+      "contents": "New Order 1 When new order coming you can see the push notification and this notification will be stayed in notification bar in the right top of the page 2 You have to manually confirm the order to avoid any mismatch stock between system and real stock 2 To accept all the order in one orderID you can click Semua tersedia button 4 To accept some and reject the rest of them you have to click Ada stok Kosong and switch off the toggle for the products that were out of stock 5 To reject all the order in one orderID you can click Tolak Pesanan button 6 As admin you can see the order in all stores by selecting the store in the dropdown menu But for store employee you can only see the order in the store that was 7 assigned to you Ready to Proceed 1 After you confirmed the order customer will either pay or cancel it 2 If customer paid the order then the order will be moved to Siap Diproses tab 3 Your team can proceed the order and after it s ready you can click Pesan Kurir button 4 The system will automatically search for the courier 5 After the order moved to Dalam pengiriman tab the system will proceed it automatically based on when the courier s action 6 The order will be automatically moved to Selesai tab if courier has been finished from their own system 7 The order will be automatically moved to Dibatalkan tab if either you or your customer cancel it",
+      "excerpt": "New Order 1 When new order coming you can see the push notification and this notification will be stayed in notification bar in the right top of the page 2 You",
+      "meta": {
+        "createdAt": "2022-06-07T01:36:57.451Z",
+        "lastModified": "2022-06-07T01:36:57.451Z",
+        "size": 2504,
+        "formattedSize": "2.4 KB",
+        "absolutePath": "/qios/how-to/manage-order"
+      },
+      "product": "qios",
+      "type": "docs",
+      "id": "manage-order",
+      "title": "How To Manage Order",
+      "prev": "set-up-bank-account",
+      "next": "release-notes-version",
+      "section": "How To"
+    },
+    {
+      "contents": "Add Product 1 Click Produk and choose Tambah secara manual or Upload CSV 2 If you choose Tambah secara manual you have to fill in the fields then click Tambahkan produk 3 To bulky add product you can choose Upload CSV and follow this template Modify Product Edit Delete Change Availability 1 To edit the product you have to click the hyperlink in the name of each product 2 To delete the product you have to click the Delete hyperlink 3 To change the availability of each product you have to switch on off the toggle Generate Catalogue for Chatbot 1 Click the Katalog tab besides the Daftar produk tab to see all the products that you ve uploaded You can manage the appearance of the catalog view in customer facing bot through this feature 2 You can drag and move the thumbnail to rearrange the order and click Simpan 3 You can click Preview katalog to see how it will be displayed in customer facing",
+      "excerpt": "Add Product 1 Click Produk and choose Tambah secara manual or Upload CSV 2 If you choose Tambah secara manual you have to fill in the fields then click Tambahkan produk",
+      "meta": {
+        "createdAt": "2022-06-07T01:36:57.452Z",
+        "lastModified": "2022-06-07T01:36:57.452Z",
+        "size": 2024,
+        "formattedSize": "2.0 KB",
+        "absolutePath": "/qios/how-to/manage-product"
+      },
+      "product": "qios",
+      "type": "docs",
+      "id": "manage-product",
+      "title": "How To Manage Product",
+      "prev": "general-setup",
+      "next": "manage-store",
+      "section": "How To"
+    },
+    {
+      "contents": "Add a New Store 1 You can add a store from the onboarding steps or from Toko menu 2 If you add store from Toko menu you have to click Tambah toko button first 3 Fill in all the fields then click Tambahkan toko Modify Store 1 To edit the store you have to click the hyperlink in the name of each store 2 To delete the store you have to click the Delete hyperlink 3 To change the opening of each store you have to switch on off the toggle",
+      "excerpt": "Add a New Store 1 You can add a store from the onboarding steps or from Toko menu 2 If you add store from Toko menu you have to click Tambah",
+      "meta": {
+        "createdAt": "2022-06-07T01:36:57.452Z",
+        "lastModified": "2022-06-07T01:36:57.452Z",
+        "size": 1063,
+        "formattedSize": "1.0 KB",
+        "absolutePath": "/qios/how-to/manage-store"
+      },
+      "product": "qios",
+      "type": "docs",
+      "id": "manage-store",
+      "title": "How To Manage Store",
+      "prev": "manage-product",
+      "next": "activate-your-chatbot",
+      "section": "How To"
+    },
+    {
+      "contents": "Set Up Bank Account Information 1 Go to Pengaturan gt Rekening 2 Fill in all the fields for you bank account information 3 This information will be saved for manual disbursement that will be done by our finance team by weekly",
+      "excerpt": "Set Up Bank Account Information 1 Go to Pengaturan gt Rekening 2 Fill in all the fields for you bank account information 3 This information will be saved for manual disbursement",
+      "meta": {
+        "createdAt": "2022-06-07T01:36:57.452Z",
+        "lastModified": "2022-06-07T01:36:57.452Z",
+        "size": 598,
+        "formattedSize": "598 Bytes",
+        "absolutePath": "/qios/how-to/set-up-bank-account"
+      },
+      "product": "qios",
+      "type": "docs",
+      "id": "set-up-bank-account",
+      "title": "How To Set Up Bank Account",
+      "prev": "activate-your-chatbot",
+      "next": "manage-order",
+      "section": "How To"
+    },
+    {
+      "contents": "About Qios Qios is a chat based commerce platform For business owners it sounds familiar to handle transactions through chat and what comes next is when their team can t handle it well due to too many order chats coming in a day Qios comes to help businesses handling their day to day transactions using chatbot With Qios you will get the end to end experience from serving customers through chat bot to managing store inventory and order through our own merchant dashboard To make it more one stop solution you will not only get the dashboard to handle transactions but you will also get the integration with our customer service dashboard Kata Omnichat",
+      "excerpt": "About Qios Qios is a chat based commerce platform For business owners it sounds familiar to handle transactions through chat and what comes next is when their team can t handle",
+      "meta": {
+        "createdAt": "2022-06-07T01:36:57.452Z",
+        "lastModified": "2022-06-07T01:36:57.452Z",
+        "size": 953,
+        "formattedSize": "953 Bytes",
+        "absolutePath": "/qios/introduction/about"
+      },
+      "product": "qios",
+      "type": "docs",
+      "id": "about",
+      "title": "About Qios",
+      "next": "general-setup",
+      "section": "Introduction"
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "about": {
+    "previous": null,
+    "next": {
+      "id": "benefits-with-kata-platform",
+      "url": "/kata-platform/introduction/benefits-with-kata-platform",
+      "title": "Benefits with Kata Platform"
+    }
+  },
+  "benefits-with-kata-platform": {
+    "previous": { "id": "about", "url": "/kata-platform/introduction/about", "title": "What is Kata Platform" },
+    "next": {
+      "id": "kata-platform-features",
+      "url": "/kata-platform/introduction/kata-platform-features",
+      "title": "Kata Platform Features"
+    }
+  },
+  "kata-platform-features": {
+    "previous": {
+      "id": "benefits-with-kata-platform",
+      "url": "/kata-platform/introduction/benefits-with-kata-platform",
+      "title": "Benefits with Kata Platform"
+    },
+    "next": { "id": "all-use-cases", "url": "/kata-platform/use-case/all-use-cases", "title": "All Use Cases" }
+  },
+  "all-use-cases": {
+    "previous": {
+      "id": "kata-platform-features",
+      "url": "/kata-platform/introduction/kata-platform-features",
+      "title": "Kata Platform Features"
+    },
+    "next": {
+      "id": "designing-conversation",
+      "url": "/kata-platform/documentation-content/designing-conversation",
+      "title": "Designing Conversation"
+    }
+  },
+  "designing-conversation": {
+    "previous": { "id": "all-use-cases", "url": "/kata-platform/use-case/all-use-cases", "title": "All Use Cases" },
+    "next": {
+      "id": "start-your-first-chatbot",
+      "url": "/kata-platform/documentation-content/start-your-first-chatbot",
+      "title": "Start Your First Chatbot"
+    }
+  },
+  "start-your-first-chatbot": {
+    "previous": {
+      "id": "designing-conversation",
+      "url": "/kata-platform/documentation-content/designing-conversation",
+      "title": "Designing Conversation"
+    },
+    "next": {
+      "id": "analyze-your-bot-conversations",
+      "url": "/kata-platform/documentation-content/analyze-your-bot-conversations",
+      "title": "Analyze Your Bot Conversations"
+    }
+  },
+  "analyze-your-bot-conversations": {
+    "previous": {
+      "id": "start-your-first-chatbot",
+      "url": "/kata-platform/documentation-content/start-your-first-chatbot",
+      "title": "Start Your First Chatbot"
+    },
+    "next": { "id": "error-log", "url": "/kata-platform/documentation-content/error-log", "title": "Error Log" }
+  },
+  "error-log": {
+    "previous": {
+      "id": "analyze-your-bot-conversations",
+      "url": "/kata-platform/documentation-content/analyze-your-bot-conversations",
+      "title": "Analyze Your Bot Conversations"
+    },
+    "next": {
+      "id": "how-to-deploy-your-chatbot-using-generic-channel",
+      "url": "/kata-platform/how-to/how-to-deploy-your-chatbot-using-generic-channel",
+      "title": "How to Deploy Your Chatbot Using Generic Channel"
+    }
+  },
+  "how-to-deploy-your-chatbot-using-generic-channel": {
+    "previous": { "id": "error-log", "url": "/kata-platform/documentation-content/error-log", "title": "Error Log" },
+    "next": {
+      "id": "how-to-improve-your-chatbot-intelligence-by-training-your-nlu",
+      "url": "/kata-platform/how-to/how-to-improve-your-chatbot-intelligence-by-training-your-nlu",
+      "title": "How to Improve Your Chatbot Intelligence by Training Your NLU"
+    }
+  },
+  "how-to-improve-your-chatbot-intelligence-by-training-your-nlu": {
+    "previous": {
+      "id": "how-to-deploy-your-chatbot-using-generic-channel",
+      "url": "/kata-platform/how-to/how-to-deploy-your-chatbot-using-generic-channel",
+      "title": "How to Deploy Your Chatbot Using Generic Channel"
+    },
+    "next": {
+      "id": "how-to-use-nlu-threshold-to-enhance-customer-experience",
+      "url": "/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience",
+      "title": "How to Use NLU Threshold to Enhance Customer Experience"
+    }
+  },
+  "how-to-use-nlu-threshold-to-enhance-customer-experience": {
+    "previous": {
+      "id": "how-to-improve-your-chatbot-intelligence-by-training-your-nlu",
+      "url": "/kata-platform/how-to/how-to-improve-your-chatbot-intelligence-by-training-your-nlu",
+      "title": "How to Improve Your Chatbot Intelligence by Training Your NLU"
+    },
+    "next": {
+      "id": "how-to-use-super-model-to-improve-your-bot-intelligence",
+      "url": "/kata-platform/how-to/how-to-use-super-model-to-improve-your-bot-intelligence",
+      "title": "How to Use Super Model (“Kata Entity”) to Improve Your Bot Intelligence"
+    }
+  },
+  "how-to-use-super-model-to-improve-your-bot-intelligence": {
+    "previous": {
+      "id": "how-to-use-nlu-threshold-to-enhance-customer-experience",
+      "url": "/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience",
+      "title": "How to Use NLU Threshold to Enhance Customer Experience"
+    },
+    "next": {
+      "id": "how-to-use-training-data-generator-to-automate-generating-training-data",
+      "url": "/kata-platform/how-to/how-to-use-training-data-generator-to-automate-generating-training-data",
+      "title": "How to Use Training Data Generator to Automate Generating Training Data"
+    }
+  },
+  "how-to-use-training-data-generator-to-automate-generating-training-data": {
+    "previous": {
+      "id": "how-to-use-super-model-to-improve-your-bot-intelligence",
+      "url": "/kata-platform/how-to/how-to-use-super-model-to-improve-your-bot-intelligence",
+      "title": "How to Use Super Model (“Kata Entity”) to Improve Your Bot Intelligence"
+    },
+    "next": {
+      "id": "how-to-use-bulk-training-for-faster-training-process",
+      "url": "/kata-platform/how-to/how-to-use-bulk-training-for-faster-training-process",
+      "title": "How to Use Bulk Training to the Faster Training Process"
+    }
+  },
+  "how-to-use-bulk-training-for-faster-training-process": {
+    "previous": {
+      "id": "how-to-use-training-data-generator-to-automate-generating-training-data",
+      "url": "/kata-platform/how-to/how-to-use-training-data-generator-to-automate-generating-training-data",
+      "title": "How to Use Training Data Generator to Automate Generating Training Data"
+    },
+    "next": {
+      "id": "using-sync-api-to-access-third-party-application",
+      "url": "/kata-platform/how-to/using-sync-api-to-access-third-party-application",
+      "title": "Using Sync API to Access Third-Party Application"
+    }
+  },
+  "using-sync-api-to-access-third-party-application": {
+    "previous": {
+      "id": "how-to-use-bulk-training-for-faster-training-process",
+      "url": "/kata-platform/how-to/how-to-use-bulk-training-for-faster-training-process",
+      "title": "How to Use Bulk Training to the Faster Training Process"
+    },
+    "next": {
+      "id": "using-async-api-to-access-third-party-application",
+      "url": "/kata-platform/how-to/using-async-api-to-access-third-party-application",
+      "title": "Using Async API to Access Third-Party Application"
+    }
+  },
+  "using-async-api-to-access-third-party-application": {
+    "previous": {
+      "id": "using-sync-api-to-access-third-party-application",
+      "url": "/kata-platform/how-to/using-sync-api-to-access-third-party-application",
+      "title": "Using Sync API to Access Third-Party Application"
+    },
+    "next": {
+      "id": "how-to-change-error-messages-in-your-chatbot",
+      "url": "/kata-platform/how-to/how-to-change-error-messages-in-your-chatbot",
+      "title": "How to Change Error Messages in Your Chatbot to Match Them With Chatbot Persona"
+    }
+  },
+  "how-to-change-error-messages-in-your-chatbot": {
+    "previous": {
+      "id": "using-async-api-to-access-third-party-application",
+      "url": "/kata-platform/how-to/using-async-api-to-access-third-party-application",
+      "title": "Using Async API to Access Third-Party Application"
+    },
+    "next": { "id": "general-faqs", "url": "/kata-platform/faqs/general-faqs", "title": "General FAQs" }
+  },
+  "general-faqs": {
+    "previous": {
+      "id": "how-to-change-error-messages-in-your-chatbot",
+      "url": "/kata-platform/how-to/how-to-change-error-messages-in-your-chatbot",
+      "title": "How to Change Error Messages in Your Chatbot to Match Them With Chatbot Persona"
+    },
+    "next": {
+      "id": "bot-development-faqs",
+      "url": "/kata-platform/faqs/bot-development-faqs",
+      "title": "Bot Development FAQs"
+    }
+  },
+  "bot-development-faqs": {
+    "previous": { "id": "general-faqs", "url": "/kata-platform/faqs/general-faqs", "title": "General FAQs" },
+    "next": { "id": "glossary-general", "url": "/kata-platform/glossary/general", "title": "General" }
+  },
+  "glossary-general": {
+    "previous": {
+      "id": "bot-development-faqs",
+      "url": "/kata-platform/faqs/bot-development-faqs",
+      "title": "Bot Development FAQs"
+    },
+    "next": { "id": "glossary-kata-platform", "url": "/kata-platform/glossary/kata-platform", "title": "Kata Platform" }
+  },
+  "glossary-kata-platform": {
+    "previous": { "id": "glossary-general", "url": "/kata-platform/glossary/general", "title": "General" },
+    "next": {
+      "id": "glossary-inside-kata-flow",
+      "url": "/kata-platform/glossary/inside-kata-flow",
+      "title": "Inside Kata Flow"
+    }
+  },
+  "glossary-inside-kata-flow": {
+    "previous": {
+      "id": "glossary-kata-platform",
+      "url": "/kata-platform/glossary/kata-platform",
+      "title": "Kata Platform"
+    },
+    "next": { "id": "glossary-coming-soon", "url": "/kata-platform/glossary/coming-soon", "title": "Coming Soon" }
+  },
+  "glossary-coming-soon": {
+    "previous": {
+      "id": "glossary-inside-kata-flow",
+      "url": "/kata-platform/glossary/inside-kata-flow",
+      "title": "Inside Kata Flow"
+    },
+    "next": { "id": "release-notes-version", "url": "/kata-platform/release-notes/version", "title": "Version" }
+  }
+}

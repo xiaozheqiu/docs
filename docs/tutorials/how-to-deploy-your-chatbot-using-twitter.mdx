@@ -1,0 +1,215 @@
+---
+layout: tutorial
+title: How to deploy your chatbot using Twitter
+id: how-to-deploy-your-chatbot-using-twitter
+product: kata-platform
+imgSpot: /assets/images/tutorials/spot-twitter.webp
+date: '2021-08-26T07:00:00+07:00'
+---
+
+Twitter is a trending social media for most countries, so Twitter chatbots will be a great opportunity to join the trend ✨ In this tutorial, you will learn how to deploy the bot to the Twitter direct message channel. So, let’s get started.
+
+## Deploy your chatbot
+
+1. Click **Deploy** menu in the left sidebar
+2. On the Deploy page, click on the **New Deployment** button in the top right corner. It will open up the Create Deployment menu.
+3. Choose any deployment version you want to deploy and fill in the changelog.
+
+<FigureImage
+  caption={{ title: 'Figure 1.', description: `Create a new deployment` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image1.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={1600}
+  naturalWidth={1133}
+/>
+
+1. Click **Submit** to finish the deployment
+
+If you already have an environment created, skip these steps.
+
+1. Go to the **Deployments > Environment** menu.
+
+<FigureImage
+  caption={{ title: 'Figure 2.', description: `Set up environment, then set up Twitter channel` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image2.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={505}
+  naturalWidth={1600}
+/>
+
+2. Click the **Create Environment** button in any environment. You will see a drawer to create a new environment.
+3. Choose the **development version** you want (in this tutorial, we use the 1.0.0 version)
+4. Fill in the **environment URL**. This environment URL is used for CMS. Learn more about CMS.
+5. Click **Create** to create the environment.
+6. Created environment now has a **Create Channel** button.
+
+Continue to choose Twitter as a chatbot channel.
+
+1. Click the **Create Channel** button to start adding channels to the environment. It will open up the Channel menu within the environment.
+2. Click the ”**+ Create Channel**” button in the channel table list. A menu to set up the channel will be shown.
+3. Choose **Twitter** in Channel Type.
+
+<FigureImage
+  caption={{ title: 'Figure 3.', description: `Create Twitter channel` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image3.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={1218}
+  naturalWidth={1600}
+/>
+
+<Table>
+  <TableHead>
+    <TableHeadRow>
+      <TableHeadCell>Field Name</TableHeadCell>
+      <TableHeadCell>Functionality</TableHeadCell>
+      <TableHeadCell>Limitation</TableHeadCell>
+    </TableHeadRow>
+  </TableHead>
+  <TableBody>
+    <TableBodyRow>
+      <TableBodyCell>Name</TableBodyCell>
+      <TableBodyCell>Your channel name</TableBodyCell>
+      <TableBodyCell>
+        Max. 30 characters must contain only alphanumeric characters (A-Z, a-z, 0-9), `-`, and `_`.
+      </TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Access Token</TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Access Token Secret</TableBodyCell>
+      <TableBodyCell>- </TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Consumer Key (API Key)</TableBodyCell>
+      <TableBodyCell>- </TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Consumer Secret (API Secret)</TableBodyCell>
+      <TableBodyCell>- </TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+</Table>
+
+## How to collect API secret key, access token, and access token secret
+
+1. To deploy your bot on Twitter, you need to register for a developer account. Go to <a href="https://developer.twitter.com" target="_blank"><span>http</span>s://developer.twitter.com</a>.
+2. Continue to sign up by following the instructions.
+3. Then, log in to the Twitter Developer Page. You will see the homepage.
+4. Click on **Create An App** tab, then your page will be shown like this:
+
+<FigureImage
+  caption={{ title: 'Figure 4.', description: ` Create an app page.` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image4.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={600}
+  naturalWidth={741}
+/>
+
+5. Fill the form then click on **Create** button
+6. Then, go to the **Keys and tokens** tab. Click the **Regenerate** button to generate an API key, API secret key, access token, and access token secret. Here is an example.
+
+<FigureImage
+  caption={{ title: 'Figure 5.', description: `Generate access token and access token secret` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image5.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={378}
+  naturalWidth={757}
+/>
+
+7. Then, go to the **Permissions** tab. In this tab, change access permissions to **Read, write, and Direct Message**.
+
+<FigureImage
+  caption={{ title: 'Figure 6.', description: `Access permissions changed to Read, write and Direct Messages` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image6.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={273}
+  naturalWidth={750}
+/>
+
+8. Go to the **Dev environments**(<a href="https://developer.twitter.com/en/account/environments" target="_blank"><span>http</span>s://developer.twitter.com/en/account/environments</a>), then click the button **Set up dev environment** to begin.
+
+<FigureImage
+  caption={{ title: 'Figure 7.', description: `Set up dev environment` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image7.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={429}
+  naturalWidth={934}
+/>
+
+Next step is to paste the API key, API secret key, access token, and access token secret from Twitter to the Kata Platform.
+
+1. Go back to the Key and Tokens tab, copy all fields.
+2. After copied, go back to Kata Platform (<a href="https://platform.kata.ai" target="_blank"><span>http</span>s://platform.kata.ai</a>)
+3. Paste the API key, API secret key, access token, and access token secret there. Here is the example:
+
+<FigureImage
+  caption={{ title: 'Figure 8.', description: `Paste API key, API secret key, access token, and access token secret` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image8.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={1287}
+  naturalWidth={1600}
+/>
+
+4. Click **Create** to generate the webhook. You can see a webhook URL from the generated channel.
+5. Click the **copy** icon to copy the webhook URL.
+
+<FigureImage
+  caption={{ title: 'Figure 9.', description: `Copy webhook URL` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image9.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={282}
+  naturalWidth={1600}
+/>
+
+## Finalize Twitter Direct Message Set Up
+
+1. Clone this repository: <a href="https://github.com/twitterdev/account-activity-dashboard" target="_blank"><span>http</span>s://github.com/twitterdev/account-activity-dashboard</a>
+2. Install Node.js dependencies using **npm install** command.
+3. Create a new **config.json** file based on **config.sample.json** & **.env** file based on **env.template** and fill in your Twitter keys, tokens and webhook environment name. Twitter keys and access tokens are found on your app page on Apps Dashboard (<a href="https://developer.twitter.com/apps" target="_blank"><span>http</span>s://developer.twitter.com/apps</a>). The basic auth properties can be anything you want, and are used for simple password protection to access the configuration UI. Environment name is found on the Dev Environment (<a href="https://developer.twitter.com/en/account/environments" target="_blank"><span>http</span>s://developer.twitter.com/en/account/environments</a>) page. Make sure you have access to the Account Activity API.
+4. Revisit your developer.twitter.com Apps Settings page, and add the following URL values as whitelisted Callback URLs:
+
+```
+http://your.app.domain/callbacks/addsub
+http://your.app.domain/callbacks/removesub
+```
+
+5. Run locally using **npm start** command
+6. Open <a href="http://your.app.domain/webhook" target="_blank"><span>htt</span>p://your.app.domain/webhook</a>. If it succeeds, username and password are inserted with basic auth properties that you have defined before.
+7. Paste webhook from Kata Platform to Create or Update Webhook. Click **Create/Update** to continue.
+
+<FigureImage
+  caption={{ title: 'Figure 10.', description: `Paste webhook URL from Kata Platform` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image10.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={324}
+  naturalWidth={828}
+/>
+
+8. Next, open <a href="http://your.app.domain/subscriptions" target="_blank"><span>htt</span>p://your.app.domain/subscriptions</a>.
+9. Then, click **Add** to add a user subscription. Login with the same account that you set to become the bot.
+
+<FigureImage
+  caption={{ title: 'Figure 11.', description: `Manage subscription page` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image11.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={346}
+  naturalWidth={1091}
+/>
+
+10. Finally, create a direct message to the bot account.
+
+<FigureImage
+  caption={{ title: 'Figure 12.', description: `Chatbot successfully deployed` }}
+  src="/assets/images/tutorials/how-to-deploy-your-chatbot-using-twitter/image12.webp"
+  alt="How to deploy your chatbot to Twitter"
+  naturalHeight={509}
+  naturalWidth={725}
+/>
+
+This is the end of the guidance, you can contact support@kata.ai if you have any difficulties when implementing this.

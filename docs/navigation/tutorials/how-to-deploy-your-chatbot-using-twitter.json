@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "How to deploy your chatbot using Twitter",
+          "useAccordion": true,
+          "items": [
+            { "url": "#deploy-your-chatbot", "title": "Deploy your chatbot" },
+            {
+              "url": "#how-to-collect-api-secret-key-access-token-and-access-token-secret",
+              "title": "How to collect API secret key, access token, and access token secret"
+            },
+            {
+              "url": "#finalize-twitter-direct-message-set-up",
+              "title": "Finalize Twitter Direct Message Set Up"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

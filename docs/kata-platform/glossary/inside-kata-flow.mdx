@@ -1,0 +1,97 @@
+---
+id: glossary-inside-kata-flow
+title: Inside Kata Flow
+prev: glossary-kata-platform
+next: glossary-coming-soon
+section: Glossary
+---
+
+### API
+
+API is an action type to call an external API when the chatbot meet with specific condition. It can be used in all messaging channels.
+
+<br />
+There are 3 action API types in the Kata Platform:
+
+#### Handover
+
+Handover API is used to shift conversations from chatbot to human agent via Kata Omnichat. For more info and tutorial, please check this link
+
+#### Sync
+
+Sync API is a default API process and makes the response API saved in the metadata. It will need to wait for the API results before the chatbot continues to the next state.
+
+#### Async
+
+Async API is used to make the response API send via command without waiting for the API results to move to the next state (a more seamless API call process).
+
+<FigureImage
+  alt="Image 1 alt"
+  src="/assets/images/products/kata-platform/release-notes/platform-3.26.0/image1.webp"
+  caption={{ title: 'Figure 1', description: 'Handover, Sync, Async Tab in Action API' }}
+  layout="responsive"
+  naturalHeight={1111}
+  naturalWidth={664}
+/>
+
+### Conversation Flow
+
+Conversation Flows contain a collection of conversation flows and actions in a bot. You can create a new flow by clicking the Create Flow button.
+
+#### Active Flow
+
+Active Flow works as an indicator for active and functioning flow inside the bot. If the Active Flow toggle is green, the flow is running. On the other hand, if the Active Flow toggle is off, the flow is inaccessible in the bot.
+
+#### Persistent Flow
+
+Persistent Flow is used to make the flow repeat the last state if the end-user gives an inappropriate response. You can build this by turning on the Persistent toggle on Create Flow window.
+
+#### Default Flow
+
+Default is the flow that has been provided by Kata Platform. You can find it on the Conversation Flow screen. Meanwhile, the Default toggle box on the Create Flow screen serves to activate the default mode of flow. The default mode will run when no other flow can respond to end-user input.
+
+### Transition
+
+Transition is the process of moving between different states or the state itself (self-transition). In Kata Platform, you can use a transition to connect two states by drawing lines between them or define it through the Transition tab in Create State window.
+Every time you draw a line from one state to another on the Conversation Flow screen, you must create a Transition. This transition between states requires conditions to make the bot move along the path.
+On the Transitions tab in the Create States window, you can choose from two types of transitions: Self Transition and Floating Transition. Both of these features are optional.
+
+#### Self Transition
+
+This feature lets you create a looping state if the end-users input an utterance that doesn’t meet the bot condition. For example, you create a bot that requires an end-user email address. To avoid inappropriate end-user answers, you can make this state keep repeating the same question until the end-user provides the correct answer.
+
+#### Floating Transition
+
+Floating Transition allows you to create a state that a bot can access freely from any prior state. You can find this feature on the Transition tab while you open the Create or Edit State window.
+
+### Mapping
+
+Mapping is a procedure to store a value in a destined variable. For example, you want to input 0 in A variable, which is called “value”, then store it into the destined variable, which is “key”. Mapping in the Kata Platform can be found when creating or editing Transition and creating or editing a State.
+
+#### Simple Mapping
+
+Simple Mapping is a Mapping process with inputting key and value.
+
+#### Method Mapping
+
+Method is JS code that is embedded into the chatbot to perform a certain operation while method mapping is a way to run the methods that have been created in the chatbot.
+
+#### OnEnter Mapping
+
+The mapping process occurs when the bot enters a state.
+
+#### OnExit Mapping
+
+The mapping process occurs after the bot finds a transition from one state to another.
+
+### States
+
+State represents the stage of the conversation.
+
+#### Initial State
+
+Initial state acts as a flow starter. Each flow has to build one initial state.
+
+#### End State
+
+End state indicates the end of one session of conversation.

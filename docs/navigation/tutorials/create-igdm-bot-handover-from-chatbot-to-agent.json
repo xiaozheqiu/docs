@@ -1,0 +1,73 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "Create Instagram Bot Handover from Chatbot to Agent Tutorial",
+          "useAccordion": true,
+          "items": [
+            {
+              "url": "#chatbot-flow",
+              "title": "Chatbot Flow"
+            },
+            {
+              "url": "#create-project",
+              "title": "Create Project"
+            },
+            {
+              "url": "#create-handover-flow",
+              "title": "Create Handover Flow"
+            },
+            {
+              "url": "#create-greetings-state-to-respond-end-users-who-greet-bot-via-direct-message",
+              "title": "Create Greetings State to Respond End-User’s who Greet Bot via Direct Message"
+            },
+            {
+              "url": "#create-greetings-state-to-respond-end-users-who-greet-bot-via-instagram-story-mention",
+              "title": "Create Greetings State to Respond End-User’s who Greet Bot via Instagram Story Mention"
+            },
+            {
+              "url": "#create-greetings-state-to-respond-end-users-who-greet-bot-via-instagram-story-reply",
+              "title": "Create Greetings State to Respond End-User’s who Greet Bot via Instagram Story Reply"
+            },
+            {
+              "url": "#create-quick-replies",
+              "title": "Create Quick Replies"
+            },
+            {
+              "url": "#create-generic-template-carousel",
+              "title": "Create Generic Template (Carousel)"
+            },
+            {
+              "url": "#create-text-response",
+              "title": "Create Text Response"
+            },
+            {
+              "url": "#create-handover-to-human-agent-flow",
+              "title": "Create Handover to Human Agent Flow"
+            },
+            {
+              "url": "#create-confirmation-state",
+              "title": "Create Confirmation State"
+            },
+            { "url": "#create-fallback-intent", "title": "Create Fallback Intent" },
+            {
+              "url": "#finalize-your-new-bot",
+              "title": "Finalize Your New Bot"
+            },
+            { "url": "#create-inbox-in-omnichat", "title": "Create Inbox in Omnichat" },
+            {
+              "url": "#create-agent-bot-in-omnichat",
+              "title": "Create Agent Bot in Omnichat"
+            },
+            {
+              "url": "#update-instagram-bot-to-use-ice-breaker",
+              "title": "Update Instagram Bot to Use Ice Breaker"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

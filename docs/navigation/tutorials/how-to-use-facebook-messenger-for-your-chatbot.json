@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "How to use Facebook Messenger for your chatbot",
+          "useAccordion": true,
+          "items": [
+            {
+              "url": "#deploy-your-chatbot",
+              "title": "Deploy Your Chatbot"
+            },
+            {
+              "url": "#how-to-get-page-access-token",
+              "title": "How to get Page Access Token"
+            },
+            {
+              "url": "#how-to-get-app-secret",
+              "title": "How to get App Secret"
+            },
+            {
+              "url": "#finalize-set-up-in-facebook",
+              "title": "Finalize Set up in Facebook"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

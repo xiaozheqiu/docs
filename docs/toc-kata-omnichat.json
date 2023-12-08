@@ -1,0 +1,382 @@
+{
+  "items": [
+    {
+      "title": "Introduction",
+      "items": [
+        {
+          "id": "what-is-kata-omnichat",
+          "url": "/kata-omnichat/introduction/what-is-kata-omnichat",
+          "title": "What is Kata Omnichat"
+        },
+        {
+          "id": "benefits-with-kata-omnichat",
+          "url": "/kata-omnichat/introduction/benefits-with-kata-omnichat",
+          "title": "Benefits with Kata Omnichat"
+        }
+      ]
+    },
+    {
+      "title": "Before you start",
+      "items": [
+        {
+          "id": "prepare-your-instagram-business-account",
+          "url": "/kata-omnichat/before-you-start/prepare-your-instagram-business-account",
+          "title": "Prepare your Instagram Business account"
+        },
+        {
+          "id": "prepare-your-waba-account",
+          "url": "/kata-omnichat/before-you-start/prepare-your-waba-account",
+          "title": "Prepare your WABA account"
+        }
+      ]
+    },
+    {
+      "title": "Getting started",
+      "items": [
+        {
+          "id": "register-your-account-first",
+          "url": "/kata-omnichat/getting-started/register-your-account-first",
+          "title": "Register your account first"
+        },
+        {
+          "id": "connect-your-instagram-messaging-inbox",
+          "url": "/kata-omnichat/getting-started/connect-your-instagram-messaging-inbox",
+          "title": "Connect your Instagram Messaging inbox"
+        },
+        {
+          "id": "connect-your-waba-inbox",
+          "url": "/kata-omnichat/getting-started/connect-your-waba-inbox",
+          "title": "Connect your WABA inbox"
+        }
+      ]
+    },
+    {
+      "title": "Configure your agent chatbot",
+      "items": [
+        {
+          "id": "setup-agent-bot-in-kata-omnichat",
+          "url": "/kata-omnichat/configure-your-agent-chatbot/setup-agent-bot-in-kata-omnichat",
+          "title": "Setup Agent Bot in Kata Omnichat"
+        },
+        {
+          "id": "create-agent-bot-from-kata-platform",
+          "url": "/kata-omnichat/configure-your-agent-chatbot/create-agent-bot-from-kata-platform",
+          "title": "Create Agent Bot from Kata Platform"
+        }
+      ]
+    },
+    {
+      "title": "How to use the dashboard",
+      "items": [
+        {
+          "id": "dashboard-update-profile",
+          "url": "/kata-omnichat/how-to-use-the-dashboard/update-profile",
+          "title": "Update profile"
+        },
+        {
+          "id": "dashboard-change-password",
+          "url": "/kata-omnichat/how-to-use-the-dashboard/change-password",
+          "title": "Change password"
+        }
+      ]
+    },
+    {
+      "title": "Configure your account",
+      "items": [
+        {
+          "id": "configure-account-introduction",
+          "url": "/kata-omnichat/configure-your-account/introduction",
+          "title": "Introduction"
+        },
+        {
+          "id": "configure-account-how-to-use",
+          "url": "/kata-omnichat/configure-your-account/how-to-use",
+          "title": "How to use"
+        }
+      ]
+    },
+    {
+      "title": "Manage inbox",
+      "items": [
+        {
+          "id": "inbox-add-inbox",
+          "url": "/kata-omnichat/manage-inbox/add-inbox",
+          "title": "Add inbox"
+        },
+        {
+          "id": "inbox-add-agents",
+          "url": "/kata-omnichat/manage-inbox/add-agents",
+          "title": "Add agents"
+        }
+      ]
+    },
+    {
+      "title": "Manage inbox settings",
+      "items": [
+        {
+          "id": "manage-agents-to-inbox",
+          "url": "/kata-omnichat/manage-inbox-settings/manage-agents-to-inbox",
+          "title": "Manage agents to inbox"
+        },
+        {
+          "id": "set-up-quick-reply",
+          "url": "/kata-omnichat/manage-inbox-settings/set-up-quick-reply",
+          "title": "Set up quick reply"
+        },
+        {
+          "id": "set-up-business-hours",
+          "url": "/kata-omnichat/manage-inbox-settings/set-up-business-hours",
+          "title": "Set up business hours"
+        },
+        {
+          "id": "set-up-ice-breaker",
+          "url": "/kata-omnichat/manage-inbox-settings/set-up-ice-breaker",
+          "title": "Set Up Ice Breaker"
+        }
+      ]
+    },
+    {
+      "title": "Manage agent",
+      "items": [
+        {
+          "id": "add-agent",
+          "url": "/kata-omnichat/manage-agent/add-agent",
+          "title": "Add agent"
+        },
+        {
+          "id": "edit-agent",
+          "url": "/kata-omnichat/manage-agent/edit-agent",
+          "title": "Edit agent"
+        },
+        {
+          "id": "delete-agent",
+          "url": "/kata-omnichat/manage-agent/delete-agent",
+          "title": "Delete agent"
+        },
+        {
+          "id": "received-the-invitation",
+          "url": "/kata-omnichat/manage-agent/received-the-invitation",
+          "title": "Received the invitation as administrator or agent"
+        }
+      ]
+    },
+    {
+      "title": "Manage your conversation",
+      "items": [
+        {
+          "id": "admin-view-conversation",
+          "url": "/kata-omnichat/manage-your-conversation/admin-view-conversation",
+          "title": "Admin view conversation"
+        },
+        {
+          "id": "agent-view-conversation",
+          "url": "/kata-omnichat/manage-your-conversation/agent-view-conversation",
+          "title": "Agent view conversation"
+        },
+        {
+          "id": "whatsapp-business-conversation-using-bot",
+          "url": "/kata-omnichat/manage-your-conversation/whatsapp-business-conversation-using-bot",
+          "title": "Whatsapp Business conversation using a bot"
+        },
+        {
+          "id": "whatsapp-business-conversation-in-agent-side",
+          "url": "/kata-omnichat/manage-your-conversation/whatsapp-business-conversation-in-agent-side",
+          "title": "Whatsapp Business API conversation in agent-side (with or without bot)"
+        },
+        {
+          "id": "conversation-in-customer-side-using-bot",
+          "url": "/kata-omnichat/manage-your-conversation/conversation-in-customer-side-using-bot",
+          "title": "Conversation in Customer-side using bot"
+        },
+        {
+          "id": "conversation-in-customer-side-without-bot",
+          "url": "/kata-omnichat/manage-your-conversation/conversation-in-customer-side-without-bot",
+          "title": "Conversation in Customer-side for Instagram Messaging (without bot)"
+        },
+        {
+          "id": "see-conversation-between-chatbot-and-customer",
+          "url": "/kata-omnichat/manage-your-conversation/see-conversation-between-chatbot-and-customer",
+          "title": "See Conversation between Chatbot and Customer"
+        },
+        {
+          "id": "using-private-notes-in-conversations",
+          "url": "/kata-omnichat/manage-your-conversation/using-private-notes-in-conversations",
+          "title": "Using private notes in conversations"
+        },
+        {
+          "id": "manual-agent-assignment",
+          "url": "/kata-omnichat/manage-your-conversation/manual-agent-assignment",
+          "title": "Manual Agent Assignment"
+        },
+        {
+          "id": "auto-agent-assignment",
+          "url": "/kata-omnichat/manage-your-conversation/auto-agent-assignment",
+          "title": "Auto agent assignment"
+        },
+        {
+          "id": "resolve-conversation",
+          "url": "/kata-omnichat/manage-your-conversation/resolve-conversation",
+          "title": "Resolve conversation"
+        },
+        {
+          "id": "take-over-bot",
+          "url": "/kata-omnichat/manage-your-conversation/take-over-bot",
+          "title": "Take-over bot"
+        },
+        {
+          "id": "mute-conversation",
+          "url": "/kata-omnichat/manage-your-conversation/mute-conversation",
+          "title": "Mute conversation"
+        },
+        {
+          "id": "download-transcript",
+          "url": "/kata-omnichat/manage-your-conversation/download-transcript",
+          "title": "Download transcript"
+        }
+      ]
+    },
+    {
+      "title": "Manage your contact",
+      "items": [
+        {
+          "id": "view-contact",
+          "url": "/kata-omnichat/manage-your-contact/view-contact",
+          "title": "View contact"
+        },
+        {
+          "id": "add-contact",
+          "url": "/kata-omnichat/manage-your-contact/add-contact",
+          "title": "Add contact"
+        }
+      ]
+    },
+    {
+      "title": "Manage label",
+      "items": [
+        {
+          "id": "add-label",
+          "url": "/kata-omnichat/manage-label/add-label",
+          "title": "Add label"
+        },
+        {
+          "id": "add-conversation-to-a-label",
+          "url": "/kata-omnichat/manage-label/add-conversation-to-a-label",
+          "title": "Add conversation to a label"
+        }
+      ]
+    },
+    {
+      "title": "Manage teams",
+      "items": [
+        {
+          "id": "add-teams",
+          "url": "/kata-omnichat/manage-teams/add-teams",
+          "title": "Add teams"
+        }
+      ]
+    },
+    {
+      "title": "Canned response",
+      "items": [
+        {
+          "id": "set-up-canned-responses",
+          "url": "/kata-omnichat/canned-response/set-up-canned-responses",
+          "title": "Set up canned responses"
+        }
+      ]
+    },
+    {
+      "title": "Setup email notifications",
+      "items": [
+        {
+          "id": "email-notification-introduction",
+          "url": "/kata-omnichat/setup-email-notification/introduction",
+          "title": "Introduction"
+        },
+        {
+          "id": "email-notification-how-to-use",
+          "url": "/kata-omnichat/setup-email-notification/how-to-use",
+          "title": "How to use"
+        }
+      ]
+    },
+    {
+      "title": "Get access token",
+      "items": [
+        {
+          "id": "access-token-introduction",
+          "url": "/kata-omnichat/get-access-token/introduction",
+          "title": "Introduction"
+        },
+        {
+          "id": "access-token-how-to-use",
+          "url": "/kata-omnichat/get-access-token/how-to-use",
+          "title": "How to use"
+        }
+      ]
+    },
+    {
+      "title": "Enable audio notifications",
+      "items": [
+        {
+          "id": "audio-notification-introduction",
+          "url": "/kata-omnichat/enable-audio-notification/introduction",
+          "title": "Introduction"
+        },
+        {
+          "id": "audio-notification-how-to-use",
+          "url": "/kata-omnichat/enable-audio-notification/how-to-use",
+          "title": "How to use"
+        }
+      ]
+    },
+    {
+      "title": "Change your status",
+      "items": [
+        {
+          "id": "change-your-status-introduction",
+          "url": "/kata-omnichat/change-your-status/introduction",
+          "title": "Introduction"
+        },
+        {
+          "id": "change-your-status-how-to-use",
+          "url": "/kata-omnichat/change-your-status/how-to-use",
+          "title": "How to use"
+        }
+      ]
+    },
+    {
+      "title": "Reports",
+      "items": [
+        {
+          "id": "view-report",
+          "url": "/kata-omnichat/reports/view-report",
+          "title": "View report"
+        },
+        {
+          "id": "download-report",
+          "url": "/kata-omnichat/reports/download-report",
+          "title": "Download report"
+        }
+      ]
+    },
+    {
+      "title": "Release Notes",
+      "items": [
+        {
+          "id": "release-notes-version",
+          "url": "/kata-omnichat/release-notes/version",
+          "title": "Version",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "version-255",
+              "url": "/kata-omnichat/release-notes/version#255",
+              "title": "2.5.5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

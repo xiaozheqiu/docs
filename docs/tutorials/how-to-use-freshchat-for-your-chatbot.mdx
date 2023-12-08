@@ -1,0 +1,207 @@
+---
+layout: tutorial
+title: How to use Freshchat for your chatbot
+id: how-to-use-freshchat-for-your-chatbot
+imgSpot: /assets/images/tutorials/spot-freshchat.webp
+product: kata-platform
+date: '2021-08-26T07:00:00+07:00'
+---
+
+Freshchat’s live chat software is the fastest way for you to engage with your website visitors, provide assistance, and convert leads to happy customers. In this section, we will learn to connect our bot with Freshchat. Let’s get started.
+
+## Deploy your chatbot
+
+1. Click **Deploy** menu in the left sidebar
+2. On the Deploy page, click on the **New Deployment** button in the top right corner. It will open up the Create Deployment menu.
+3. Choose any deployment version you want to deploy and fill in the changelog.
+
+<FigureImage
+  caption={{ title: 'Figure 1', description: `Create a new deployment` }}
+  src="/assets/images/tutorials/how-to-use-freshchat-for-your-chatbot/image1.webp"
+  alt="How to use Freshchat for your chatbot"
+  naturalHeight={1600}
+  naturalWidth={1133}
+/>
+
+4. Click **Submit** to finish the deployment
+
+If you already have an environment created, skip these steps.
+
+1. Go to the **Deployments > Environment** menu.
+
+<FigureImage
+  caption={{ title: 'Figure 2', description: `Set up environment, then set up Freshchat channel` }}
+  src="/assets/images/tutorials/how-to-use-freshchat-for-your-chatbot/image2.webp"
+  alt="How to use Freshchat for your chatbot"
+  naturalHeight={505}
+  naturalWidth={1600}
+/>
+
+2. Click the **Create Environment** button in any environment. You will see a drawer to create a new environment.
+3. Choose the **development version** you want (in this tutorial, we use the 1.0.0 version)
+4. Fill in the **environment URL**. This environment URL is used for CMS. Learn more about CMS.
+5. Click **Create** to create the environment.
+6. Created environment now has a **Create Channel** button.
+
+Continue to choose Freshchat as a chatbot channel.
+
+1. Click the **Create Channel** button to start adding channels to the environment. It will open up the Channel menu within the environment.
+2. Click the ”**+ Create Channel**” button in the channel table list. A menu to set up the channel will be shown.
+3. Choose **Freshchat** in Channel Type.
+
+<FigureImage
+  caption={{ title: 'Figure 3', description: `Create Freshchat channel` }}
+  src="/assets/images/tutorials/how-to-use-freshchat-for-your-chatbot/image3.webp"
+  alt="How to use Freshchat for your chatbot"
+  naturalHeight={1084}
+  naturalWidth={1600}
+/>
+
+<Table>
+  <TableHead>
+    <TableHeadRow>
+      <TableHeadCell>Field Name</TableHeadCell>
+      <TableHeadCell>Functionality</TableHeadCell>
+      <TableHeadCell>Limitation</TableHeadCell>
+    </TableHeadRow>
+  </TableHead>
+  <TableBody>
+    <TableBodyRow>
+      <TableBodyCell>Name</TableBodyCell>
+      <TableBodyCell>Your channel name</TableBodyCell>
+      <TableBodyCell>
+        Max. 30 characters must contain only alphanumeric characters (A-Z, a-z, 0-9), `-`, and `_`.
+      </TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>API Token</TableBodyCell>
+      <TableBodyCell>Token credential from Freshchat</TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Actor ID</TableBodyCell>
+      <TableBodyCell>Actor ID that collected from Freshchat </TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+</Table>
+
+## How to generate API Token
+
+1. First of all, you need to sign in to your **Freshworks** account to do the integration.
+2. After you’re logged in, go to the **Settings** page to configure the API Token and Webhook.
+
+<FigureImage
+  caption={{ title: 'Figure 4', description: `Settings page in Freshwork.` }}
+  src="/assets/images/tutorials/how-to-use-freshchat-for-your-chatbot/image4.webp"
+  alt="How to use Freshchat for your chatbot"
+  naturalHeight={900}
+  naturalWidth={1600}
+/>
+
+3. In order to generate the API Token in Freshchat, go to **Settings → API** Tokens.
+4. Then, click on the **Generate Token** button.
+
+<FigureImage
+  caption={{ title: 'Figure 5', description: `Generate a token in Freshchat.` }}
+  src="/assets/images/tutorials/how-to-use-freshchat-for-your-chatbot/image5.webp"
+  alt="How to use Freshchat for your chatbot"
+  naturalHeight={900}
+  naturalWidth={1600}
+/>
+
+Next step is to paste the API token from Freshchat to the Kata Platform.
+
+1. Go back to Kata Platform (<a href="https://platform.kata.ai" target="_blank"><span>http</span>s://platform.kata.ai</a>)
+2. Paste the API Token there. Here is the example:
+
+<FigureImage
+  caption={{ title: 'Figure 6', description: `Paste the API token to the API token field.` }}
+  src="/assets/images/tutorials/how-to-use-freshchat-for-your-chatbot/image6.webp"
+  alt="How to use Freshchat for your chatbot"
+  naturalHeight={1034}
+  naturalWidth={1600}
+/>
+
+Let’s continue to get an Actor ID.
+
+## How to generate Actor ID
+
+1. Go to **Settings → Team** Members.
+2. Then, click on the **Add a team member** button. In the “Roles” field, choose “Agent”.
+
+<FigureImage
+  caption={{ title: 'Figure 7', description: `Add a team member page.` }}
+  src="/assets/images/tutorials/how-to-use-freshchat-for-your-chatbot/image7.webp"
+  alt="How to use Freshchat for your chatbot"
+  naturalHeight={900}
+  naturalWidth={1600}
+/>
+
+3. With the API Token we got from the previous step, get the Actor ID using <a href="https://www.postman.com/" target="_blank">Postman</a> or cURL. Actor ID is the agent `id`.
+
+```
+curl --request GET 'https://api.freshchat.com/v2/agents' \
+--header 'Authorization: Bearer <token>'
+```
+
+<FigureImage
+  caption={{ title: 'Figure 8', description: `Showing results from API.` }}
+  src="/assets/images/tutorials/how-to-use-freshchat-for-your-chatbot/image8.webp"
+  alt="How to use Freshchat for your chatbot"
+  naturalHeight={900}
+  naturalWidth={1600}
+/>
+
+4. Copy one of the Agent IDs, then paste it to the Kata Platform.
+
+Next step is to paste the API token from Freshchat to the Kata Platform.
+
+1. Go back to Kata Platform (<a href="https://platform.kata.ai" target="_blank"><span>http</span>s://platform.kata.ai</a>)
+2. Paste the Actor ID there. Here is the example:
+
+<FigureImage
+  caption={{ title: 'Figure 9', description: `Paste Actor ID into channel configuration.` }}
+  src="/assets/images/tutorials/how-to-use-freshchat-for-your-chatbot/image9.webp"
+  alt="How to use Freshchat for your chatbot"
+  naturalHeight={1154}
+  naturalWidth={1472}
+/>
+
+3. Click **Create** to generate the webhook. You can see a webhook URL from the generated channel.
+4. Click the copy icon to copy the webhook URL.
+
+<FigureImage
+  caption={{ title: 'Figure 10', description: `Copy webhook URL.` }}
+  src="/assets/images/tutorials/how-to-use-freshchat-for-your-chatbot/image10.webp"
+  alt="How to use Freshchat for your chatbot"
+  naturalHeight={509}
+  naturalWidth={1600}
+/>
+
+## Finalize Freshchat set up
+
+1. Go back to Freshchat, then go to **Settings → Webhooks**.
+2. Turn on the webhook toggle which is placed in the top right.
+3. Then, paste the webhook URL in the **Webhook** field.
+4. Next, fill in a valid email address in the **Failure Notifications** field. It will enable you to receive the notification whenever there is a failure in the integration. Here is the example:
+
+<FigureImage
+  caption={{ title: 'Figure 11', description: `Set up webhook URL` }}
+  src="/assets/images/tutorials/how-to-use-freshchat-for-your-chatbot/image11.webp"
+  alt="How to use Freshchat for your chatbot"
+  naturalHeight={900}
+  naturalWidth={1600}
+/>
+
+5. Finally, click on the **Save** button.
+
+It works! You can now share your newly created chatbot with your friends.
+
+Freshchat also has an agent handover feature. It is useful for creating a seamless engagement experience for your customer to interact with your agent to meet their needs. The agent handover flow is:
+
+1. End-users start a conversation with a chatbot.
+2. In the beginning or middle of a conversation, the end-user may request to be connected with any human-agents.
+3. Chatbot function will be paused if there’s an available agent. If there are none, chatbot will notify the user to make another request after a few minutes.
+
+This is the end of the guidance, you can contact support@kata.ai if you have any difficulties when implementing this.

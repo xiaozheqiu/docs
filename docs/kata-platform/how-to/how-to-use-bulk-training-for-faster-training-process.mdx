@@ -1,0 +1,295 @@
+---
+id: how-to-use-bulk-training-for-faster-training-process
+title: How to Use Bulk Training to the Faster Training Process
+prev: how-to-use-training-data-generator-to-automate-generating-training-data
+next: using-sync-api-to-access-third-party-application
+section: How To
+---
+
+## What is Bulk Training
+
+Great NL models are a fundamental part of making a great chatbot and approximately 70% of all chatbot projects use NL models instead of a keyword-based approach, based on our Kata.ai projects data.
+
+Previously, the bulk training process was very technical because developers needed to use KataCLI and view the results on the Platform GUI (<a href="https://platform.kata.ai" target="_blank"><span>http</span>s://platform.kata.ai</a>). This back and forth switching of tools was required to do training.
+
+Now, you can use the new Bulk Training on the Platform GUI itself to train more than 200 sentences/training data at once. These are the screenshots of our newest feature.
+
+{' '}
+
+<FigureImage
+  alt="Image 1 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-bulk-training-to-the-faster-training-process/image1.webp"
+  caption={{ title: 'Figure 1', description: 'Upload training data file' }}
+  layout="responsive"
+  naturalHeight={512}
+  naturalWidth={550}
+/>
+
+{' '}
+
+<FigureImage
+  alt="Image 2 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-bulk-training-to-the-faster-training-process/image2.webp"
+  caption={{ title: 'Figure 2', description: 'Preview from uploaded training data from file' }}
+  layout="responsive"
+  naturalHeight={662}
+  naturalWidth={1816}
+/>
+
+You can click on this <a href="https://www.youtube.com/watch?v=qcxQqMI-Khs" target="_blank">video tutorial</a> or go to the **NLU -> Training menu** (check the screenshot below).
+
+{' '}
+
+<FigureImage
+  alt="Image 3 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-bulk-training-to-the-faster-training-process/image3.webp"
+  caption={{ title: 'Figure 3', description: 'Video tutorial in bulk training' }}
+  layout="responsive"
+  naturalHeight={1306}
+  naturalWidth={1999}
+/>
+
+## How Bulk Training Might Help You?
+
+Training NL models is one of the most time-consuming processes in chatbot development, which could take approximately 6 weeks. On average, a complex chatbot project requires 1,000 data for their NL models. It’s not ideal to train the sentences one by one, as a typical 1,000-sentence NL model would easily take more than 4 hours to train.
+
+Hence, bulk training can significantly reduce the training effort with a simplified user flow
+
+## How to Use Bulk Training
+
+### Create a Project
+
+Mission: Create a new project.
+Prerequisite: You already have a Platform account and have logged in.
+
+1. Click on the **Create Project** button.
+2. Fill in the required fields for the project.
+3. Click **Create Project**.
+
+### Create Entities And Labels With Type "trait"
+
+Mission: Create NL models to be trained and type entity “trait”. Learn more about entity type “trait”.
+Prerequisites: You already have a project.
+
+1. Go to **NLU**.
+2. Click on **Entities**.
+3. Click the **Create Entity** button to start creating entities and labels. Learn more about entities and labels or you may want to explore how to design the NLU.
+4. Fill in fields with this example.
+
+```
+Entity name: intent
+Type: trait
+Profile: default - Text classification
+```
+
+5. To create labels, you need to type and press “enter” to save a new label. Fill in with these examples.
+
+```
+Labels: greetings, thank you
+```
+
+6. The result goes here:
+
+{' '}
+
+<FigureImage
+  alt="Image 4 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-bulk-training-to-the-faster-training-process/image4.webp"
+  caption={{ title: 'Figure 4', description: 'Create entity type “trait”' }}
+  layout="responsive"
+  naturalHeight={1260}
+  naturalWidth={1999}
+/>
+
+7. Click **Create** to create a new entity with "greetings" and "thank you" labels.
+
+### Create Entities And Labels With Type "phrase"
+
+Mission: Create NL models to be trained and type entity “phrase”. Learn more about entity type “trait”.
+Prerequisites: You already have a project.
+
+1. Click the **Create Entity** button to start creating entities and labels. Learn more about entities and labels or you may want to explore how to design the NLU
+2. Fill in fields with these examples:
+
+```
+Entity name: object
+Type: phrase
+Profile: default - Default phrase
+```
+
+3. To create labels, you need to type and press “enter” to save a new pile. Fill in with this example:
+
+```
+Labels: person
+```
+
+4. The result goes here:
+
+{' '}
+
+<FigureImage
+  alt="Image 5 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-bulk-training-to-the-faster-training-process/image5.webp"
+  caption={{ title: 'Figure 5', description: 'Create entity type “phrase”' }}
+  layout="responsive"
+  naturalHeight={1222}
+  naturalWidth={1999}
+/>
+
+### Guideline to Create a Training Data
+
+Before we use the NL bulk training, we will create training data using a simple syntax. “#’ for entity type “trait” and “@” for entity type “phrase”. Learn more about entity type “trait” and entity type “phrase”.
+
+This syntax is only allowed for entity type “trait”
+
+```
+Saya mau pesan pizza #intent:order
+```
+
+This means that the sentence is classified into **entity name: intent** with **label: order**
+
+```
+Totalnya berapa ya? #intent:ask #questionType:how_much
+```
+
+This means that the sentence is classified into **entity name: intent** with **label: order** and **entity name: questionType** with **label: how_much**
+
+This syntax is only allowed for entity type “phrase”
+
+```
+Saya mau pesan tiket ke (@destination Malang) atas nama (@ner:person Budi) #intent:order
+```
+
+This means that the word “Malang” is tagged for **entity name: destination** and “Budi” is tagged for **entity name: ner** with **label: person**
+
+### Create New Training Data
+
+Mission: Create new training data in a .txt extension file. In this step, you will need to open a text and source code editor such as Notepad (in Windows), <a href="https://notepad-plus-plus.org/downloads/" target="_blank">notepad++</a>, <a href="https://www.sublimetext.com/" target="_blank">Sublime</a>, etc.
+Prerequisites: You already have a project and entities.
+
+1. Open your text and source code editor (Notepad, notepad++, sublime, etc.)
+2. Create a new file.
+3. Type following sentences example to create training data to train our NL models. You can add up to 200 sentences/training data. Or, you can download <a href="https://drive.google.com/file/d/1ErLuDwa6_1hyfnV7zVNBrlleE7l3KCb0/view" target="_blank">this example</a>.
+
+```
+selamat pagi #intent:greetings
+welcome #intent:greetings
+nama saya (@object:person amanda), salam kenal ya #intent:greetings
+kemarin saya lihat (@object:person amanda) dan (@object:person rizyan) bercengkerama
+hari ini cerah ya kata (@object:person destri)
+morning everyone!! #intent:greetings
+```
+
+4. Save the following training data into a file named: training-data-example.txt
+
+### Upload Training Data And Perform Data Training
+
+Mission: Upload training data to be previewed in Platform GUI.
+Prerequisites: Training data has been created as a .txt extension file.
+
+1. Go to **NLU > Training** in Platform.
+2. Click on the **Bulk Training** button.
+3. Click on **Browse** button to open the file explorer/finder or drag and drop the file into the browse file dialog.
+4. Wait for the upload process.
+5. After the upload is complete, you can review the training data file in Platform GUI.
+
+{' '}
+
+<FigureImage
+  alt="Image 6 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-bulk-training-to-the-faster-training-process/image6.webp"
+  caption={{ title: 'Figure 6', description: 'Preview training data' }}
+  layout="responsive"
+  naturalHeight={1125}
+  naturalWidth={1999}
+/>
+
+6. Click on the **Train** button to train the data.
+7. You will see a customer satisfaction survey after using the feature.
+8. Fill in the survey, then click **X** to close the dialog.
+9. You have successfully trained your NL model with the uploaded data.
+
+{' '}
+
+<FigureImage
+  alt="Image 7 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-bulk-training-to-the-faster-training-process/image7.webp"
+  caption={{ title: 'Figure 7', description: 'Successfully trained the training data' }}
+  layout="responsive"
+  naturalHeight={1261}
+  naturalWidth={1999}
+/>
+
+## Error Messages
+
+During the upload process, you might receive any of the error messages below. Let’s see what they are and how to solve each one of the errors.
+
+### Your File Won’t Be Uploaded if You Close The Dialog Box Now.
+
+It will show if you’re trying to close the upload dialog box or click the **X** symbol during the file uploading process. Please do not click the **X** button.
+
+{' '}
+
+<FigureImage
+  alt="Image 8 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-bulk-training-to-the-faster-training-process/image8.webp"
+  caption={{ title: 'Figure 8', description: 'Showing warning message if you click “x” button.' }}
+  layout="responsive"
+  naturalHeight={1306}
+  naturalWidth={1999}
+/>
+
+### Invalid File Format. Only .txt Files Are Supported.
+
+This error message will be displayed if you uploaded different types of files. Bulk Training feature only accept .txt file format.
+
+{' '}
+
+<FigureImage
+  alt="Image 9 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-bulk-training-to-the-faster-training-process/image9.webp"
+  caption={{ title: 'Figure 9', description: 'Showing error message if you’re uploading not .txt format.' }}
+  layout="responsive"
+  naturalHeight={1306}
+  naturalWidth={1999}
+/>
+
+### Your .txt File is Empty
+
+If you uploaded an empty .txt file, this error message will be shown. Please check and make sure you have written the data training content in the .txt file. For more about the data training file format, please refer to the [#guideline-to-create-a-training-data](guideline to create training data).
+
+{' '}
+
+<FigureImage
+  alt="Image 10 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-bulk-training-to-the-faster-training-process/image10.webp"
+  caption={{ title: 'Figure 10', description: 'Showing error that your file does not have any script inside it.' }}
+  layout="responsive"
+  naturalHeight={1306}
+  naturalWidth={1999}
+/>
+
+### Your Connection Was Interrupted. Please Check Your Connection. Try again.
+
+If your internet connection was interrupted during the upload process, this error message will be shown. Please make sure that your internet connection is stable and re-upload the data training file again.
+
+{' '}
+
+<FigureImage
+  alt="Image 11 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-bulk-training-to-the-faster-training-process/image11.webp"
+  caption={{
+    title: 'Figure 11',
+    description:
+      'Showing error message that your connection is bad and has interrupted training data uploading process.',
+  }}
+  layout="responsive"
+  naturalHeight={1306}
+  naturalWidth={1999}
+/>
+
+### The .txt File Contains Entities or Labels That You Don't Currently Have. Please Check Your File or Entities.
+
+This error message will be displayed if your data training file contains no entities or labels that matched your current entities on the project. Please check your NL project then go to the entities menu and create the entities or labels that you want to train with the Bulk Training feature.
+
+This is the end of the guidance. You can contact <a href="mailto:support@kata.ai">support@kata.ai</a> if you have any difficulties when implementing this.

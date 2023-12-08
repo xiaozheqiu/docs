@@ -1,0 +1,586 @@
+{
+  "items": [
+    {
+      "title": "Introduction",
+      "items": [
+        {
+          "id": "about",
+          "url": "/kata-platform/introduction/about",
+          "title": "What is Kata Platform"
+        },
+        {
+          "id": "benefits-with-kata-platform",
+          "url": "/kata-platform/introduction/benefits-with-kata-platform",
+          "title": "Benefits with Kata Platform"
+        },
+        {
+          "id": "kata-platform-features",
+          "url": "/kata-platform/introduction/kata-platform-features",
+          "title": "Kata Platform Features"
+        }
+      ]
+    },
+    {
+      "title": "Use Case",
+      "items": [
+        {
+          "id": "all-use-cases",
+          "url": "/kata-platform/use-case/all-use-cases",
+          "title": "All Use Cases"
+        }
+      ]
+    },
+    {
+      "title": "Documentation Content",
+      "items": [
+        {
+          "title": "Designing Conversation",
+          "id": "designing-conversation",
+          "url": "/kata-platform/documentation-content/designing-conversation",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "what-is-conversation-design",
+              "url": "/kata-platform/documentation-content/designing-conversation#what-is-conversation-design",
+              "title": "What is Conversation Design"
+            },
+            {
+              "id": "how-to-start-designing-the-conversation",
+              "url": "/kata-platform/documentation-content/designing-conversation#how-to-start-designing-the-conversation",
+              "title": "How to Start Designing the Conversation"
+            }
+          ]
+        },
+        {
+          "title": "Start Your First Chatbot",
+          "id": "start-your-first-chatbot",
+          "url": "/kata-platform/documentation-content/start-your-first-chatbot",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "video-tutorial",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#video-tutorial",
+              "title": "Video tutorial"
+            },
+            {
+              "id": "registration-and-login",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#registration-and-login",
+              "title": "Registration and Login"
+            },
+            {
+              "id": "create-a-project",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#create-a-project",
+              "title": "Create a Project"
+            },
+            {
+              "id": "create-a-flow",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#create-a-flow",
+              "title": "Create a Flow"
+            },
+            {
+              "id": "create-a-state",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#create-a-state",
+              "title": "Create a State"
+            },
+            {
+              "id": "create-an-action",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#create-an-action",
+              "title": "Create an Action"
+            },
+            {
+              "id": "create-an-intent",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#create-an-intent",
+              "title": "Create an Intent"
+            },
+            {
+              "id": "create-a-transition",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#create-a-transition",
+              "title": "Create a Transition"
+            },
+            {
+              "id": "publish-your-bot",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#publish-your-bot",
+              "title": "Publish Your Bot"
+            },
+            {
+              "id": "testing-your-bot",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#testing-your-bot",
+              "title": "Testing Your Bot"
+            },
+            {
+              "id": "create-a-deployment",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#create-a-deployment",
+              "title": "Create a Deployment"
+            },
+            {
+              "id": "create-an-environment",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#create-an-environment",
+              "title": "Create an Environment"
+            },
+            {
+              "id": "integration-to-channel",
+              "title": "Integration to a Channel",
+              "url": "/kata-platform/documentation-content/start-your-first-chatbot#integration-to-a-channel"
+            }
+          ]
+        },
+        {
+          "id": "analyze-your-bot-conversations",
+          "title": "Analyze Your Bot Conversations",
+          "url": "/kata-platform/documentation-content/analyze-your-bot-conversations",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "introduction",
+              "url": "/kata-platform/documentation-content/analyze-your-bot-conversations#introduction",
+              "title": "Introduction"
+            },
+            {
+              "id": "users",
+              "url": "/kata-platform/documentation-content/analyze-your-bot-conversations#users",
+              "title": "Users"
+            },
+            {
+              "id": "topics",
+              "url": "/kata-platform/documentation-content/analyze-your-bot-conversations#topics",
+              "title": "Topics"
+            },
+            {
+              "id": "transcripts",
+              "url": "/kata-platform/documentation-content/analyze-your-bot-conversations#transcripts",
+              "title": "Transcripts"
+            }
+          ]
+        },
+        {
+          "id": "error-log",
+          "title": "Error Log",
+          "url": "/kata-platform/documentation-content/error-log",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "error-log-introduction",
+              "url": "/kata-platform/documentation-content/error-log#introduction",
+              "title": "Introduction"
+            },
+            {
+              "id": "available-error-messages",
+              "url": "/kata-platform/documentation-content/error-log#available-error-messages",
+              "title": "Available Error Messages"
+            },
+            {
+              "id": "coming-soon",
+              "url": "/kata-platform/documentation-content/error-log#coming-soon",
+              "title": "Coming Soon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "How-to Guides",
+      "items": [
+        {
+          "id": "how-to-deploy-your-chatbot-using-generic-channel",
+          "url": "/kata-platform/how-to/how-to-deploy-your-chatbot-using-generic-channel",
+          "title": "How to Deploy Your Chatbot Using Generic Channel",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "introduction",
+              "url": "/kata-platform/how-to/how-to-deploy-your-chatbot-using-generic-channel#introduction",
+              "title": "Introduction"
+            },
+            {
+              "id": "deploy-your-chatbot-in-kata-platform",
+              "url": "/kata-platform/how-to/how-to-deploy-your-chatbot-using-generic-channel#deploy-your-chatbot-in-kata-platform",
+              "title": "Deploy Your Chatbot in Kata Platform"
+            },
+            {
+              "id": "testing-generic-channel-with-postman-app",
+              "url": "/kata-platform/how-to/how-to-deploy-your-chatbot-using-generic-channel#testing-generic-channel-with-postman-app",
+              "title": "Testing Generic Channel With Postman App"
+            }
+          ]
+        },
+        {
+          "id": "how-to-improve-your-chatbot-intelligence-by-training-your-nlu",
+          "url": "/kata-platform/how-to/how-to-improve-your-chatbot-intelligence-by-training-your-nlu",
+          "title": "How to Improve Your Chatbot Intelligence by Training Your NLU",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "introduction",
+              "url": "/kata-platform/how-to/how-to-improve-your-chatbot-intelligence-by-training-your-nlu#introduction",
+              "title": "Introduction"
+            },
+            {
+              "id": "how-to-use",
+              "url": "/kata-platform/how-to/how-to-improve-your-chatbot-intelligence-by-training-your-nlu#how-to-use",
+              "title": "How to Use"
+            },
+            {
+              "id": "training-your-nlu",
+              "url": "/kata-platform/how-to/how-to-improve-your-chatbot-intelligence-by-training-your-nlu#training-your-nlu",
+              "title": "Training your NLU"
+            },
+            {
+              "id": "test-your-nlu",
+              "url": "/kata-platform/how-to/how-to-improve-your-chatbot-intelligence-by-training-your-nlu#test-your-nlu",
+              "title": "Test Your NLU"
+            },
+            {
+              "id": "advanced-guidelines-to-design-and-train-your-nlu",
+              "url": "/kata-platform/how-to/how-to-improve-your-chatbot-intelligence-by-training-your-nlu#advanced-guidelines-to-design-and-train-your-nlu",
+              "title": "Advanced guidelines to design and train your NLU"
+            }
+          ]
+        },
+        {
+          "id": "how-to-use-nlu-threshold-to-enhance-customer-experience",
+          "url": "/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience",
+          "title": "How to Use NLU Threshold to Enhance Customer Experience",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "introduction",
+              "url": "/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience#introduction",
+              "title": "Introduction"
+            },
+            {
+              "id": "how-to-use",
+              "url": "/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience#how-to-use",
+              "title": "How to Use"
+            },
+            {
+              "id": "test-your-chatbot",
+              "url": "/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience#test-your-chatbot",
+              "title": "Test Your Chatbot"
+            }
+          ]
+        },
+        {
+          "id": "how-to-use-super-model-to-improve-your-bot-intelligence",
+          "url": "/kata-platform/how-to/how-to-use-super-model-to-improve-your-bot-intelligence",
+          "title": "How to Use Super Model (“Kata Entity”) to Improve Your Bot Intelligence",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "introduction",
+              "url": "/kata-platform/how-to/how-to-use-super-model-to-improve-your-bot-intelligence#introduction",
+              "title": "Introduction"
+            },
+            {
+              "id": "how-to-use",
+              "url": "/kata-platform/how-to/how-to-use-super-model-to-improve-your-bot-intelligence#how-to-use",
+              "title": "How to Use"
+            }
+          ]
+        },
+        {
+          "id": "how-to-use-training-data-generator-to-automate-generating-training-data",
+          "url": "/kata-platform/how-to/how-to-use-training-data-generator-to-automate-generating-training-data",
+          "title": "How to Use Training Data Generator to Automate Generating Training Data",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "introduction",
+              "url": "/kata-platform/how-to/how-to-use-training-data-generator-to-automate-generating-training-data#introduction",
+              "title": "Introduction"
+            },
+            {
+              "id": "create-entity-and-labels",
+              "url": "/kata-platform/how-to/how-to-use-training-data-generator-to-automate-generating-training-data#create-entity-and-labels",
+              "title": "Create Entity and Labels"
+            },
+            {
+              "id": "create-a-word-bank",
+              "url": "/kata-platform/how-to/how-to-use-training-data-generator-to-automate-generating-training-data#create-a-word-bank",
+              "title": "Create a Word Bank"
+            },
+            {
+              "id": "create-a-data-sample",
+              "url": "/kata-platform/how-to/how-to-use-training-data-generator-to-automate-generating-training-data#create-a-data-sample",
+              "title": "Create a Data Sample"
+            },
+            {
+              "id": "generate-training-data",
+              "url": "/kata-platform/how-to/how-to-use-training-data-generator-to-automate-generating-training-data#generate-training-data",
+              "title": "Generate Training Data"
+            },
+            {
+              "id": "limitations",
+              "url": "/kata-platform/how-to/how-to-use-training-data-generator-to-automate-generating-training-data#limitations",
+              "title": "Limitations"
+            }
+          ]
+        },
+        {
+          "id": "how-to-use-bulk-training-for-faster-training-process",
+          "url": "/kata-platform/how-to/how-to-use-bulk-training-for-faster-training-process",
+          "title": "How to Use Bulk Training to the Faster Training Process",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "what-is-bulk-training",
+              "url": "/kata-platform/how-to/how-to-use-bulk-training-for-faster-training-process#what-is-bulk-training",
+              "title": "What is Bulk Training?"
+            },
+            {
+              "id": "how-bulk-training-might-help-you",
+              "url": "/kata-platform/how-to/how-to-use-bulk-training-for-faster-training-process#how-bulk-training-might-help-you",
+              "title": "How Bulk Training Might Help You?"
+            },
+            {
+              "id": "how-to-use-bulk-training",
+              "url": "/kata-platform/how-to/how-to-use-bulk-training-for-faster-training-process#how-to-use-bulk-training",
+              "title": "How to Use Bulk Training"
+            },
+            {
+              "id": "error-messages",
+              "url": "/kata-platform/how-to/how-to-use-bulk-training-for-faster-training-process#error-messages",
+              "title": "Error Messages"
+            }
+          ]
+        },
+        {
+          "id": "using-sync-api-to-access-third-party-application",
+          "url": "/kata-platform/how-to/using-sync-api-to-access-third-party-application",
+          "title": "Using Sync API to Access Third-Party Application",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "introduction",
+              "url": "/kata-platform/how-to/using-sync-api-to-access-third-party-application#introduction",
+              "title": "Introduction"
+            },
+            {
+              "id": "how-to-use",
+              "url": "/kata-platform/how-to/using-sync-api-to-access-third-party-application#how-to-use",
+              "title": "How to Use"
+            },
+            {
+              "id": "how-to-collect-sync-api-result",
+              "url": "/kata-platform/how-to/using-sync-api-to-access-third-party-application#how-to-collect-sync-api-result",
+              "title": "How to Collect Sync API Result"
+            }
+          ]
+        },
+        {
+          "id": "using-async-api-to-access-third-party-application",
+          "url": "/kata-platform/how-to/using-async-api-to-access-third-party-application",
+          "title": "Using Async API to Access Third-Party Application",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "introduction",
+              "url": "/kata-platform/how-to/using-async-api-to-access-third-party-application#introduction",
+              "title": "Introduction"
+            },
+            {
+              "id": "how-to-use",
+              "url": "/kata-platform/how-to/using-async-api-to-access-third-party-application#how-to-use",
+              "title": "How to Use"
+            },
+            {
+              "id": "how-to-collect-async-api-result",
+              "url": "/kata-platform/how-to/using-async-api-to-access-third-party-application#how-to-collect-async-api-result",
+              "title": "How to Collect Async API Result"
+            }
+          ]
+        },
+        {
+          "id": "how-to-change-error-messages-in-your-chatbot",
+          "url": "/kata-platform/how-to/how-to-change-error-messages-in-your-chatbot",
+          "title": "How to Change Error Messages in Your Chatbot to Match Them With Chatbot Persona",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "change-default-error-message",
+              "url": "/kata-platform/how-to/how-to-change-error-messages-in-your-chatbot#change-default-error-message",
+              "title": "Change Default Error Message"
+            },
+            {
+              "id": "change-default-timeout-message",
+              "url": "/kata-platform/how-to/how-to-change-error-messages-in-your-chatbot#change-default-timeout-message",
+              "title": "Change Default Timeout Message"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "FAQs",
+      "items": [
+        {
+          "id": "general-faqs",
+          "url": "/kata-platform/faqs/general-faqs",
+          "title": "General FAQs"
+        },
+        {
+          "id": "bot-development-faqs",
+          "url": "/kata-platform/faqs/bot-development-faqs",
+          "title": "Bot Development FAQs"
+        }
+      ]
+    },
+    {
+      "title": "Glossary",
+      "items": [
+        {
+          "id": "glossary-general",
+          "url": "/kata-platform/glossary/general",
+          "title": "General"
+        },
+        {
+          "id": "glossary-kata-platform",
+          "url": "/kata-platform/glossary/kata-platform",
+          "title": "Kata Platform"
+        },
+        {
+          "id": "glossary-inside-kata-flow",
+          "url": "/kata-platform/glossary/inside-kata-flow",
+          "title": "Inside Kata Flow"
+        },
+        {
+          "id": "glossary-coming-soon",
+          "url": "/kata-platform/glossary/coming-soon",
+          "title": "Coming Soon"
+        }
+      ]
+    },
+    {
+      "title": "Release Notes",
+      "items": [
+        {
+          "id": "release-notes-version",
+          "url": "/kata-platform/release-notes/version",
+          "title": "Version",
+          "useAccordion": true,
+          "items": [
+            {
+              "id": "version-3263",
+              "url": "/kata-platform/release-notes/version#3263",
+              "title": "3.26.3"
+            },
+            {
+              "id": "version-3262",
+              "url": "/kata-platform/release-notes/version#3262",
+              "title": "3.26.2"
+            },
+            {
+              "id": "version-3261",
+              "url": "/kata-platform/release-notes/version#3261",
+              "title": "3.26.1"
+            },
+            {
+              "id": "version-3260",
+              "url": "/kata-platform/release-notes/version#3260",
+              "title": "3.26.0"
+            },
+            {
+              "id": "version-3251",
+              "url": "/kata-platform/release-notes/version#3251",
+              "title": "3.25.1"
+            },
+            {
+              "id": "version-3250",
+              "url": "/kata-platform/release-notes/version#3250",
+              "title": "3.25.0"
+            },
+            {
+              "id": "version-3242",
+              "url": "/kata-platform/release-notes/version#3242",
+              "title": "3.24.2"
+            },
+            {
+              "id": "version-3231",
+              "url": "/kata-platform/release-notes/version#3231",
+              "title": "3.23.1"
+            },
+            {
+              "id": "version-3230",
+              "url": "/kata-platform/release-notes/version#3230",
+              "title": "3.23.0"
+            },
+            {
+              "id": "version-3220",
+              "url": "/kata-platform/release-notes/version#3220",
+              "title": "3.22.0"
+            },
+            {
+              "id": "version-3210",
+              "url": "/kata-platform/release-notes/version#3210",
+              "title": "3.21.0"
+            },
+            {
+              "id": "version-3190",
+              "url": "/kata-platform/release-notes/version#3190",
+              "title": "3.19.0"
+            },
+            {
+              "id": "version-3150",
+              "url": "/kata-platform/release-notes/version#3150",
+              "title": "3.15.0"
+            },
+            {
+              "id": "version-390",
+              "url": "/kata-platform/release-notes/version#390",
+              "title": "3.9.0"
+            },
+            {
+              "id": "version-380",
+              "url": "/kata-platform/release-notes/version#380",
+              "title": "3.8.0"
+            },
+            {
+              "id": "version-370",
+              "url": "/kata-platform/release-notes/version#370",
+              "title": "3.7.0"
+            },
+            {
+              "id": "version-363",
+              "url": "/kata-platform/release-notes/version#363",
+              "title": "3.6.3"
+            },
+            {
+              "id": "version-356",
+              "url": "/kata-platform/release-notes/version#356",
+              "title": "3.5.6"
+            },
+            {
+              "id": "version-340",
+              "url": "/kata-platform/release-notes/version#340",
+              "title": "3.4.0"
+            },
+            {
+              "id": "version-330",
+              "url": "/kata-platform/release-notes/version#330",
+              "title": "3.3.0"
+            },
+            {
+              "id": "version-322",
+              "url": "/kata-platform/release-notes/version#322",
+              "title": "3.2.2"
+            },
+            {
+              "id": "version-320",
+              "url": "/kata-platform/release-notes/version#320",
+              "title": "3.2.0"
+            },
+            {
+              "id": "version-310",
+              "url": "/kata-platform/release-notes/version#310",
+              "title": "3.1.0"
+            },
+            {
+              "id": "version-300",
+              "url": "/kata-platform/release-notes/version#300",
+              "title": "3.0.0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

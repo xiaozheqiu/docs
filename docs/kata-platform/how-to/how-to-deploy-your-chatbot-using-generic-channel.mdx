@@ -1,0 +1,438 @@
+---
+id: how-to-deploy-your-chatbot-using-generic-channel
+title: How to Deploy Your Chatbot Using Generic Channel
+prev: error-log
+next: how-to-improve-your-chatbot-intelligence-by-training-your-nlu
+section: How To
+---
+
+## Introduction
+
+This documentation will teach you how to build a chatbot app using the Kata Platform and connect it to Generic Channel. You can use Generic Channel for the channel not yet available in Kata Platform so that you can make a “wrapper.” This tutorial will deploy your chatbot to a generic channel using NestJs and connect it with a chatbot.
+
+<div className="info">
+  <img className="borderless" src="/assets/images/icon-info.svg" />
+  <p>Important: There is no limitation in programming languages or frameworks if you want to create the app.</p>
+</div>
+
+## Deploy Your Chatbot in Kata Platform
+
+If you have already developed your chatbot, you must deploy your bot.
+
+### Create a Deployment
+
+1. Click the **Deploy** menu in the left sidebar
+2. On the Deploy page, click on the **New Deployment** button in the top right corner. It will open up the Create Deployment menu.
+3. Choose any deployment version you want to deploy and fill in the changelog.
+
+<FigureImage
+  alt="Image 1 Alt"
+  src="/assets/images/products/kata-platform/how-to/deploy-your-chatbot-in-generic-channel/image1.webp"
+  caption={{ title: 'Figure 1', description: 'Create a new deployment' }}
+  layout="responsive"
+  naturalHeight={1600}
+  naturalWidth={1133}
+/>
+
+4. Click **Submit** to finish the deployment.
+
+### Create a New Environment
+
+If you already have an environment created, skip these steps.
+
+1. Go to the **Deployments > Environment** menu.
+
+<FigureImage
+  alt="Image 2 Alt"
+  src="/assets/images/products/kata-platform/how-to/deploy-your-chatbot-in-generic-channel/image2.webp"
+  caption={{ title: 'Figure 2', description: 'Set up the environment, then set up Generic channel' }}
+  layout="responsive"
+  naturalHeight={505}
+  naturalWidth={1600}
+/>
+
+2. Click the **Create Environment** button in any environment. You will see a drawer to create a new environment.
+3. Choose the **development version** you want (in this tutorial, we use the 1.0.0 version)
+4. Fill in the **environment URL**. This environment URL is used for CMS. Learn more about CMS.
+5. Click **Create** to create the environment.
+6. Created environment now has a **Create Channel** button.
+
+### Finalize Generic channel deployment
+
+1. Click the **Create Channel** button to start adding channels to the environment. It will open up the Channel menu within the environment.
+2. Click the **”+ Create Channel”** button in the channel table list. It will show a menu to set up the channel.
+3. Choose Generic in Channel Type. Fill the form to create your channel:
+
+<Table>
+  <TableHead>
+    <TableHeadCell>Field Name</TableHeadCell>
+    <TableHeadCell>Functionality</TableHeadCell>
+    <TableHeadCell>Limitation</TableHeadCell>
+  </TableHead>
+  <TableBody>
+    <TableBodyRow>
+      <TableBodyCell>Name</TableBodyCell>
+      <TableBodyCell>Channel Name</TableBodyCell>
+      <TableBodyCell>
+        Max. 30 characters must contain only alphanumeric characters (A-Z, a-z, 0-9), `-`, and `_`.
+      </TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Token (optional)</TableBodyCell>
+      <TableBodyCell>Access token from a third-party app.</TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Refresh Token (optional)</TableBodyCell>
+      <TableBodyCell>Refresh token, if any.</TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Secret (optional)</TableBodyCell>
+      <TableBodyCell>Secret key from a third-party app</TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>URL</TableBodyCell>
+      <TableBodyCell>
+        Your endpoint to retrieve data from webhook, for example, `http://your_domain/message/retrieveMessage`
+      </TableBodyCell>
+      <TableBodyCell>Make sure your endpoint has public access to retrieve data from the webhook.</TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+</Table>
+
+4. Click **Save** to continue. After successfully making a channel, you will get a webhook. Copy this to be used for your app.
+
+<FigureImage
+  alt="Image 3 Alt"
+  src="/assets/images/products/kata-platform/how-to/deploy-your-chatbot-in-generic-channel/image3.webp"
+  caption={{ title: 'Figure 3', description: 'Click the copy button to copy the webhook.' }}
+  layout="responsive"
+  naturalHeight={1010}
+  naturalWidth={1999}
+/>
+
+### Parameters
+
+To send a message to a chatbot, you must have some parameters. See the parameter below:
+
+#### URL(POST REQUEST)
+
+```
+https://kanal.kata.ai/receive_message/webhookId
+REQUEST BODY
+{
+    "userId": "someUserId",
+    "messages": [messageObject]
+}
+```
+
+Here is the detail of messageObject that you can send to the Kata Platform:
+
+##### Text Message
+
+```
+{
+    "type": "text",
+    "content": "Halo"
+}
+```
+
+##### Data message (Postback Button Pressed)
+
+```
+{
+    "type": "data",
+    "payload": {
+        "key1": "value1",
+        "key2": "value2",
+    }
+}
+```
+
+##### Data message (Share Location)
+
+```
+{
+    "type": "data",
+    "payload": {
+        "type": "location",
+        "latitude": "-6.187011099999999",
+        "longitude": "106.84574350000003"
+    }
+}
+```
+
+##### Data message (File Attachment)
+
+```
+{
+    "type": "data",
+    "payload": {
+        "type": "image", // you can use image, audio, video, and file
+        "url": "https://somelocation.com/file"
+    }
+}
+```
+
+### Reply Message to Generic Channel
+
+Kata Platform will hit your webhook (POST Request) that registered in Generic Channel with request body below:
+
+#### Request Body
+
+```
+{
+    "messages": [messageObject, messageObject, messageObject],
+    "userId": "someUserId"
+}
+```
+
+##### Text Message
+
+```
+{
+    "type": "text",
+    "content": "Maaf, saya tidak mengerti kata-kata anda..."
+}
+```
+
+##### Button Message
+
+```
+{
+    "type": "data",
+    "payload": {
+        "type": "template",
+        "template_type": "button",
+        "items": {
+        "title": "Title",
+        "text": "Some text",
+        "actions": [
+                {
+                    "type": "postback",
+                    "label": "Label",
+                    "payload": {
+                        "key1": "value1",
+                        "key2": "value2"
+                    }
+                },
+                {
+                    "type": "url",
+                    "label": "Label",
+                    "url": "http://google.com"
+                },
+                {
+                    "type": "message",
+                    "label": "Label",
+                    "text": "Your message"
+                }
+            ]
+        }
+    }
+}
+```
+
+##### Carousel Message
+
+```
+{
+    "type": "data",
+    "payload": {
+        "type": "template",
+        "template_type": "carousel",
+        "items": [
+            {
+                "title": "Title",
+                "text": "Some text",
+                "thumbnailImageUrl": "https://pbs.twimg.com/profile_images/980544485108064256/jfiHHXbR_400x400.jpg",
+                "actions": [
+                    {
+                        "type": "postback",
+                        "label": "Label",
+                        "payload": {
+                        "key1": "value1",
+                        "key2": "value2"
+                        }
+                    },
+                    {
+                        "type": "url",
+                        "label": "Label",
+                        "url": "http://google.com"
+                    }
+                ]
+            },
+            {
+                "title": "Title",
+                "text": "Some text",
+                "thumbnailImageUrl": "https://pbs.twimg.com/profile_images/980544485108064256/jfiHHXbR_400x400.jpg",
+                "actions": [
+                    {
+                        "type": "postback",
+                        "label": "Label",
+                        "payload": {
+                        "key1": "value1",
+                        "key2": "value2"
+                        }
+                    },
+                    {
+                        "type": "url",
+                        "label": "Label",
+                        "url": "http://google.com"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+##### Image Message
+
+```
+{
+    "type": "data",
+    "payload": {
+        "type": "template",
+        "template_type": "image",
+        "items": {
+        "originalContentUrl": "https://pbs.twimg.com/profile_images/980544485108064256/jfiHHXbR_400x400.jpg",
+        "previewImageUrl": "https://pbs.twimg.com/profile_images/980544485108064256/jfiHHXbR_400x400.jpg"
+        }
+    }
+}
+```
+
+##### Audio Message
+
+```
+{
+    "type": "data",
+    "payload": {
+        "type": "template",
+        "template_type": "audio",
+        "items": {
+        "originalContentUrl": "http://www.noiseaddicts.com/samples_1w72b820/4936.mp3",
+        "duration": "10000"
+        }
+    }
+}
+```
+
+##### Video Message
+
+```
+{
+    "type": "data",
+    "payload": {
+        "type": "template",
+        "template_type": "video",
+        "items": {
+            "originalContentUrl": "http://techslides.com/demos/sample-videos/small.mp4",
+            "previewImageUrl": "https://pbs.twimg.com/profile_images/980544485108064256/jfiHHXbR_400x400.jpg"
+        }
+    }
+}
+```
+
+##### Location Message
+
+```
+{
+    "type": "data",
+    "payload": {
+        "type": "template",
+        "template_type": "location",
+        "items": {
+            "title": "Title",
+            "address": "Address",
+            "latitude": "-6.187011099999999",
+            "longitude": "106.84574350000003",
+            "locationImageUrl": "https://maps.googleapis.com/maps/api/staticmap?size=512x512&maptype=roadmap&markers=color:red%7C-6.187011099999999,106.84574350000003&zoom=18"
+        }
+    }
+}
+```
+
+### Generic Channel App
+
+Here is an example of a generic channel app built with NestJs framework. The source code: https://github.com/Farhanramadhana/Generic-Channel
+
+Source code below is the Controller /message that has 2 functions:
+
+1. `/message/retrieveMessage` endpoint with POST method to retrieve data from chatBot
+2. `/message/sendMessage` endpoint with POST method to send data to ChatBot
+
+```
+@Controller('message')
+export class AppController {
+  constructor(private readonly appService: AppService) {}
+
+  @Post('retrieveMessage')
+  retrieveMessage(@Req() request: Request) {
+    console.log(request.body);
+  }
+
+  @Post('sendMessage')
+  sendMessage(@Req() request: Request) {
+    let data = request.body;
+    return this.appService.sendMessage(data);
+  }
+}
+```
+
+sendMessage() function will send a user message to a chatbot.
+
+```
+sendMessage(data) {
+    let options = {
+      method: 'POST',
+      uri:
+        '<enter_your_webhook_here>',
+      json: true,
+      body: {
+        "userId": data.userId,
+        "messages":[
+          {
+            "type": data.messages[0].type,
+            "content": data.messages[0].content
+          }
+        ]
+      }
+    }
+
+    return rp(options)
+      .then(function (parsedBody){
+          data = {
+            "status" : "Success",
+            "messages" : parsedBody
+          }
+          return data
+      })
+      .catch(function(err) {
+          data = {
+            "status" : "error",
+            "messages" : err
+          }
+          return data
+      })
+  }
+```
+
+## Testing Generic Channel with Postman app
+
+In this section, you can use <a href="https://www.postman.com/" target="_blank">Postman</a> to test sending messages to your chatbot.
+
+<FigureImage
+  alt="Image 4 Alt"
+  src="/assets/images/products/kata-platform/how-to/deploy-your-chatbot-in-generic-channel/image4.webp"
+  caption={{ title: 'Figure 4', description: 'Testing your bot' }}
+  layout="responsive"
+  naturalHeight={317}
+  naturalWidth={1047}
+/>
+
+Finally, you will get a response from the chatbot to your app.
+
+This is the end of the guidance. You can contact <a href="mailto:support@kata.ai">support@kata.ai</a> if you have any difficulties when implementing this.

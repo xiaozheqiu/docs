@@ -1,0 +1,46 @@
+{
+  "about": {
+    "previous": null,
+    "next": { "id": "general-setup", "url": "/qios/how-to/general-setup", "title": "How to Set Up" }
+  },
+  "general-setup": {
+    "previous": { "id": "about", "url": "/qios/introduction/about", "title": "About Qios" },
+    "next": { "id": "manage-product", "url": "/qios/how-to/manage-product", "title": "How to Manage Product" }
+  },
+  "manage-product": {
+    "previous": { "id": "general-setup", "url": "/qios/how-to/general-setup", "title": "How to Set Up" },
+    "next": { "id": "manage-store", "url": "/qios/how-to/manage-store", "title": "How to Manage Store" }
+  },
+  "manage-store": {
+    "previous": { "id": "manage-product", "url": "/qios/how-to/manage-product", "title": "How to Manage Product" },
+    "next": {
+      "id": "activate-your-chatbot",
+      "url": "/qios/how-to/activate-your-chatbot",
+      "title": "How to Activate Your Chatbot"
+    }
+  },
+  "activate-your-chatbot": {
+    "previous": { "id": "manage-store", "url": "/qios/how-to/manage-store", "title": "How to Manage Store" },
+    "next": {
+      "id": "set-up-bank-account",
+      "url": "/qios/how-to/set-up-bank-account",
+      "title": "How to Set Up Bank Account"
+    }
+  },
+  "set-up-bank-account": {
+    "previous": {
+      "id": "activate-your-chatbot",
+      "url": "/qios/how-to/activate-your-chatbot",
+      "title": "How to Activate Your Chatbot"
+    },
+    "next": { "id": "manage-order", "url": "/qios/how-to/manage-order", "title": "How to Manage Order" }
+  },
+  "manage-order": {
+    "previous": {
+      "id": "set-up-bank-account",
+      "url": "/qios/how-to/set-up-bank-account",
+      "title": "How to Set Up Bank Account"
+    },
+    "next": { "id": "release-notes-version", "url": "/qios/release-notes/version", "title": "Version" }
+  }
+}

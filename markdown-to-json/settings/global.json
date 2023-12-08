@@ -1,0 +1,9 @@
+{
+  "name": "global",
+  "cwd": "./",
+  "src": "./docs",
+  "filePattern": "**/*.mdx",
+  "dist": "./markdown-to-json/outputs/global.json",
+  "metadata": true,
+  "deterministicOrder": false
+}

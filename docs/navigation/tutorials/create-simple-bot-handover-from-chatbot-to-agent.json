@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "Create Simple Bot Handover from Chatbot to Agent Tutorial",
+          "useAccordion": true,
+          "items": [
+            {
+              "url": "#simple-chatbot-flow",
+              "title": "Simple Chatbot Flow"
+            },
+            {
+              "url": "#create-project",
+              "title": "Create Project"
+            },
+            {
+              "url": "#create-greetings-flow",
+              "title": "Create Greetings Flow"
+            },
+            {
+              "url": "#catch-end-users-typing-when-choosing-menu",
+              "title": "Catch End-user's Typing when Choosing Menu"
+            },
+            {
+              "url": "#create-handover-to-human-agent-flow",
+              "title": "Create Handover to Human Agent Flow"
+            },
+            {
+              "url": "#create-end-conversation-flow",
+              "title": "Create End Conversation Flow"
+            },
+            {
+              "url": "#finalize-your-new-bot",
+              "title": "Finalize Your New Bot"
+            },
+            { "url": "#create-inbox-in-omnichat", "title": "Create Inbox in Omnichat" },
+            {
+              "url": "#create-agent-bot-in-omnichat",
+              "title": "Create Agent Bot in Omnichat"
+            },
+            { "url": "#final-demo", "title": "Final Demo" }
+          ]
+        }
+      ]
+    }
+  ]
+}

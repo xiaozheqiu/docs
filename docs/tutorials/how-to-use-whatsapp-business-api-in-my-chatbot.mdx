@@ -1,0 +1,393 @@
+---
+layout: tutorial
+id: how-to-use-whatsapp-business-api-in-my-chatbot
+imgSpot: /assets/images/tutorials/spot-business-dashboard.webp
+title: How to use WhatsApp Business API in my chatbot
+product: kata-platform
+date: '2021-10-25T07:00:00+07:00'
+---
+
+Automate your WhatsApp conversation by using our flow builder in the Kata Platform. Create bots to reply to end-users with several bot action types:
+
+- Text
+- Image and Image with Caption
+- 🎉 NEW 🎉 List Message
+- 🎉 NEW 🎉 Reply Button
+
+## Bot response types
+
+### Text
+
+#### About
+
+Reply to your chatbot users (“end-users”) by sending them text as a primary response.
+
+Here is an example of a text response to end-users.
+
+<FigureImage
+  caption={{ title: 'Figure 1', description: `Action type text in WhatsApp.` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image1.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={763}
+  naturalWidth={1600}
+/>
+
+#### How to Use
+
+1. Go to the Kata Platform and select your project.
+2. Click to **Flow > Conversation Flow > State > Action List**.
+3. Choose **Text**and enter the text you want to send.
+4. Click **Create Action** to finalize your action.
+
+### Image and Image with Caption
+
+#### About
+
+Send images to your users on WhatsApp. You can also add a caption for the image.
+
+Here is an example of image response and using caption to end-users.
+
+<FigureImage
+  caption={{ title: 'Figure 2', description: `Image with Caption Example` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image2.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={563}
+  naturalWidth={1600}
+/>
+
+#### How to Use
+
+1. Go to the Kata Platform and select your project.
+2. Click to **Flow > Conversation Flow > State > Action List**.
+3. Choose **Image** and enter the Image and Thumbnail URL.
+4. The image caption is optional.
+5. Click **Create Action** to finalize your action.
+
+### 🎉 NEW 🎉 List Message
+
+#### About
+
+Send a list of options your users can choose. You can provide up to 10 options (“rows”) from a List Message.
+
+Here is an example of a List Message response to end-users.
+
+<FigureImage
+  caption={{ title: 'Figure 3', description: `The tapping button will show the options` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image3.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={256}
+  naturalWidth={1074}
+/>
+
+<FigureImage
+  caption={{ title: 'Figure 4', description: `Show pop-up dialog menu` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image4.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={1213}
+  naturalWidth={1600}
+/>
+
+#### Composition
+
+1. Header type
+
+<FigureImage
+  caption={{ title: 'Figure 5', description: `List Message with header type “Text” and “None” in Platform` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image5.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={466}
+  naturalWidth={948}
+/>
+
+<FigureImage
+  caption={{ title: 'Figure 6', description: `List Message with header type “Text” and “None” in WhatsApp` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image6.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={580}
+  naturalWidth={776}
+/>
+
+2. Header composition
+
+<FigureImage
+  caption={{ title: 'Figure 7', description: `List Message button composition (before showing menu list) in Platform` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image7.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={818}
+  naturalWidth={1498}
+/>
+
+<FigureImage
+  caption={{ title: 'Figure 8', description: `List Message button composition (before showing menu list) in WhatsApp` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image8.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={306}
+  naturalWidth={1302}
+/>
+
+3. Section and Row
+
+<FigureImage
+  caption={{ title: 'Figure 9', description: `List Message composition (showing menu list) in Platform` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image9.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={1491}
+  naturalWidth={1600}
+/>
+
+<FigureImage
+  caption={{ title: 'Figure 10', description: `List Message composition (showing menu list) in WhatsApp` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image10.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={684}
+  naturalWidth={1402}
+/>
+
+#### How to Use
+
+Follow these steps to create a new List Message
+
+1. Go to the Kata Platform and select your project.
+2. Click to **Flow > Conversation Flow > State > Action List**.
+3. Choose**List Message.**This action type only works on WhatsApp. Adding this on other channels will result in an error.
+4. Fill in the fields.
+5. You should know some critical notes on List Message: (1) “Section” has no limit. You can add as many sections as you want; (2)You can create up to 10 rows; (3) “Row ID” in the same section must be unique. For example:
+
+   1. You make a section called “FAQ Topics.”
+   2. Inside FAQ Topics, you have 3 rows.
+   3. Those 3 rows inside FAQ Topics can’t use the same ID.
+
+<FigureImage
+  caption={{ title: 'Figure 11', description: `Using similar Row ID under 1 section is not allowed` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image11.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={1247}
+  naturalWidth={1600}
+/>
+
+6.  Click **Create Action** to finalize your action
+
+After end-users click any options, the bot must execute a response based on the clicked option. You can map the selected option by end-users using row title or row id.
+
+- Using row `title`. For example:
+
+  ```
+  context.chosen == payload.postback.title
+  ```
+
+- Using row `id`. For example:
+
+  ```
+  context.chosen == payload.postback.id
+  ```
+
+### 🎉 NEW 🎉 Reply Button
+
+#### About
+
+The reply button allows users to send a reply to the chatbot quickly. In addition, you can create up to 3 buttons.
+
+Here are examples of Reply Button responses to end-users.
+
+<FigureImage
+  caption={{ title: 'Figure 12', description: `Reply button with **Text** as header` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image12.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={666}
+  naturalWidth={1125}
+/>
+<FigureImage
+  caption={{ title: 'Figure 13', description: `Reply button with **Image** as header` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image13.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={738}
+  naturalWidth={788}
+/>
+<FigureImage
+  caption={{ title: 'Figure 14', description: `Reply button with **Document** as header` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image14.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={428}
+  naturalWidth={1142}
+/>
+<FigureImage
+  caption={{ title: 'Figure 15', description: `Reply button with **Video** as header` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image15.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={708}
+  naturalWidth={1214}
+/>
+
+#### How to Use
+
+Follow these steps to create a new Reply Button.
+
+1. Go to the Kata Platform and select your project.
+2. Click to **Flow > Conversation Flow > State > Action List**.
+3. Choose**Reply Button.**This action type only works on WhatsApp. Adding this on other channels will result in an error.
+4. Fill in the fields. Some critical notes on the Reply button that you should know:
+
+   1. “Button ID” must be unique when creating action.
+   2. The maximum number of buttons is 3 buttons.
+   3. Header type video only allows .mp4 extension, and we recommend the size is < 5 MB because end-users may experience slow connection when loading the video.
+   4. Header types image, video, and document must use HTTP/HTTPS link.
+
+<FigureImage
+  caption={{ title: 'Figure 16', description: `Reply Button composition` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image16.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={827}
+  naturalWidth={1600}
+/>
+
+5. Click **Create Action** to finalize your action.
+
+After end-users click any button, the bot must execute a response based on the clicked button. You can map the selected button by end-users using button `title` or button `id`.
+
+- Using button `title`. For example:
+
+  ```
+  context.chosen == payload.postback.title
+  ```
+
+- Using button `id`. For example:
+
+  ```
+  context.chosen == payload.postback.id
+  ```
+
+## How to deploy
+
+You can create a simple bot using text by following this bot tutorial: [Start your first chatbot](/kata-platform/documentation-content/start-your-first-chatbot).
+
+You can deploy your bot by following these steps.
+
+### Create a deployment
+
+1. Click the **Deploy** menu in the left sidebar.
+2. On the Deploy page, click on the **New Deployment** button in the top right corner. It will open up the Create Deployment menu.
+3. Choose any deployment version you want to deploy and fill in the changelog.
+
+<FigureImage
+  caption={{ title: 'Figure 17', description: `Create a new deployment` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image17.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={1600}
+  naturalWidth={1133}
+/>
+
+4. Click **Submit** to finish the deployment.
+
+### Create a new environment
+
+If you already have an environment created, skip these steps.
+
+1. Go to the **Deployments > Environment** menu.
+
+<FigureImage
+  caption={{ title: 'Figure 18', description: `Set up the environment, then set up WhatsApp channel.` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image18.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={505}
+  naturalWidth={1600}
+/>
+
+2. Click the **Create Environment** button in any environment. You will see a drawer to create a new environment.
+3. Choose the **development version** you want (in this tutorial, we use the 1.0.0 version)
+4. Fill in the **environment URL**. This environment URL is used for CMS.[Learn more about CMS](https://docs.kata.ai/cms-studio/about/').
+5. Click **Create** to create the environment.
+6. Created environment now has a **Create Channel** button.
+
+### Create WhatsApp business account
+
+You can only deploy bots to a verified WhatsApp Business number. To get the number, you have to:
+
+1. Go to [https://business.kata.ai](https://business.kata.ai)
+2. [Create a business dashboard account](/business-dashboard/get-started)
+3. [Register your new WhatsApp number](/business-dashboard/how-to-register)
+
+Then, you’re ready to get the access token from your WhatsApp business account.
+
+1. In Business Dashboard, go to the Whatsapp Numbers menu.
+
+<FigureImage
+  caption={{ title: 'Figure 19', description: `WhatsApp numbers list` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image19.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={831}
+  naturalWidth={1600}
+/>
+
+2. Then, click the WhatsApp number you want to deploy. You will redirect to the **Manage WhatsApp Number** page.
+3. In the Manage WhatsApp Number page, scroll down to **API Credential.**
+
+<FigureImage
+  caption={{ title: 'Figure 20', description: `API Credential` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image20.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={587}
+  naturalWidth={1600}
+/>
+
+4. Next, you will need to download[Postman](https://www.postman.com/downloads/) to hit the WhatsApp API.
+5. Copy the **username** and **password** from the API Credential section in the Business Dashboard into Postman.
+6. Open Postman and fill in the **URL** as follows::
+
+   ```
+   URL: POST [https://api-whatsapp.kata.ai/v1/users/login](https://api-whatsapp.kata.ai/v1/users/login)
+   ```
+
+7. Enter the username and password from Business Dashboard to the Body. Examples:
+
+   ```
+   Body::
+
+   {
+   “username”: “amanda123”
+   “password”: “Q1w2e3r4#kata”
+   }
+   ```
+
+8. Click **Send** in Postman. You will get the access token as shown.
+
+<FigureImage
+  caption={{ title: 'Figure 21', description: `Access token shows after hitting login API.` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image21.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={1162}
+  naturalWidth={1600}
+/>
+
+9. Copy the **access token** in the API result and save it next.
+
+### Finalize deployment WhatsApp channel
+
+1. Log in to Kata Platform ([https://platform.kata.ai](https://platform.kata.ai))
+2. Click your project that already had a chatbot and deployed
+3. Then, go to the menu: **Deploy > Environment**.
+4. Click the **Create Channel** button to start adding channels to the environment. It will open up the Channel menu within the environment.
+5. Click the ”**+ Create Channel**” button in the channel table list. It will show a menu to set up the channel.
+6. Choose WhatsApp in Channel Type
+7. Paste the access token into the field, and enter[https://api-whatsapp.kata.ai](https://api-whatsapp.kata.ai) in the URL field.
+
+<FigureImage
+  caption={{ title: 'Figure 22', description: `Fill in the access token and URL` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image22.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={1302}
+  naturalWidth={1350}
+/>
+
+8. Click Save to deploy your bot.
+
+You’re all set! Now you can start chatting with your WhatsApp bot.
+
+<FigureImage
+  caption={{ title: 'Figure 23', description: `Successfully deployed chatbot in WhatsApp` }}
+  src="/assets/images/tutorials/how-to-use-whatsapp-business-api-in-my-chatbot/image23.webp"
+  alt="How to use WhatsApp Business API in my chatbot"
+  naturalHeight={763}
+  naturalWidth={1600}
+/>
+
+It is the end of the guidance. You can contact support@kata.ai if you have any difficulties when implementing this.

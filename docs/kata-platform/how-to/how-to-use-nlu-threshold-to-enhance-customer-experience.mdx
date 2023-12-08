@@ -1,0 +1,190 @@
+---
+id: how-to-use-nlu-threshold-to-enhance-customer-experience
+title: How to Use NLU Threshold to Enhance Customer Experience
+prev: how-to-improve-your-chatbot-intelligence-by-training-your-nlu
+next: how-to-use-super-model-to-improve-your-bot-intelligence
+section: How To
+---
+
+## Introduction
+
+In general, the incoming message flow is:
+
+1. An incoming message is caught by intent.
+2. Next, the intent will check in NLUs previously added using Add classifier and Add attribute features. You can add more than 1 NLUs. Then it enables the intent to check all NLUs.
+3. Then, NLUs will check the threshold. The threshold can act as a confidence level, and these values range from 0.0 (completely uncertain) to 1.0 (completely confident). This confidence level is usually set between 0.7 to 0.8. Finally, NLUs will check whether the confidence score from the incoming message is lower or higher than the threshold?
+   - If an incoming message is **lower** than the threshold, NLUs will send bot information that the incoming message is incorrect with what NLU had recognized. Then, the intent will be checked by other NLUs.
+   - If an incoming message is **equal to or higher** than the threshold, NLUs will send information that the condition is correct.
+4. If NLUs condition has matched, then intent will send information to a bot that incoming message from the end-user is recognized as intent `“yesNL”` (for example).
+5. Then, the bot will check the following action if an intent condition has been fulfilled. For example, if the transition has condition `intent==‘yesNL’`, then the bot will execute the next state connected between the transition. Check the image below for more detail.
+
+<FigureImage
+  alt="Image 1 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience/image1.webp"
+  caption={{ title: 'Figure 1', description: 'Transition example which condition has intent using NLU.' }}
+  layout="responsive"
+  naturalHeight={1110}
+  naturalWidth={1328}
+/>
+
+## How to Use
+
+To integrate NLU can be implemented in chatbot, these are the steps:
+
+1. First, in the Kata Platform, go to the **Flow** menu. Then, click the **NLUs** menu in the sidebar.
+
+<FigureImage
+  alt="Image 2 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience/image2.webp"
+  caption={{ title: 'Figure 2', description: 'NLUs position in sidebar.' }}
+  layout="responsive"
+  naturalHeight={670}
+  naturalWidth={1600}
+/>
+
+2. Click on the **Create NLU** button. Then it will show a form on the right screen.
+3. Fill in NLUs name and choose an NLU Type. For this guide, you will select **NL**.
+4. On the **NLU ID** search and dropdown, you will search your NLU to integrate it into your chatbot. NLU ID consists of username and project with format `[username]:[project name]`. For example, in the [getting started chatbot section](/kata-platform/documentation-content/start-your-first-chatbot), your NLU ID format is `muhfadhiilkata:test_simple_bot`. You can use NLU ID from another project as long as the project is set as public.
+5. **Threshold** can act as a confidence level, and these values range from 0.0 (completely uncertain) to 1.0 (completely confident). This confidence level is usually set between 0.7 to 0.8. So the data that falls under 0.7/0.8 will not be detected by the bot. The field only allows numbers and decimals to separate using the “.” character.
+6. **As Intent** is a feature to collect available labels in the NLU. The field only allows alphanumerics.
+7. **Output** has several output types, depending on the entity type you used.
+
+<Table>
+  <TableHead>
+    <TableHeadCell>Output Types</TableHeadCell>
+    <TableHeadCell>Functionals</TableHeadCell>
+  </TableHead>
+  <TableBody>
+    <TableBodyRow>
+      <TableBodyCell>Raw</TableBodyCell>
+      <TableBodyCell>
+        Use this output type if your entity type is “trait”. It will result in raw sentences.
+      </TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Dictionary</TableBodyCell>
+      <TableBodyCell>
+        Use this output type if your entity type is “dictionary”. It will result in an array consisting of keys and
+        labels.
+      </TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Phrase</TableBodyCell>
+      <TableBodyCell>Using supermodel “kata entity”, you must use this output type.</TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+</Table>
+
+8. **Path** is a feature to support integration with Supermodel.
+9. Click **Create** to finish your NLUs.
+
+For example, you must integrate an NLU ID `muhfadhiilkata:test_simple_bot`, which has 1 entity name “topic” and entity type is “trait”, to an intent named “topic”. The entity “topic” has 2 labels: `FAQ`, `order`, and `buy`.
+
+The first step is you will fill in the NLUs form as follows:
+
+```
+NLU Name: topic-nl
+NLU Type: NL
+NLU ID: muhfadhiilkata:test_simple_bot
+Threshold: 0.8
+As Intent: topic
+Output: Raw
+```
+
+Next, you will define this NLU inside an intent. So, you will create an intent named “topic”.
+
+1. Go to the **Conversation Flows** menu, then click on the **Intent** tab.
+
+<FigureImage
+  alt="Image 3 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience/image3.webp"
+  caption={{ title: 'Figure 3', description: 'Intent tab position.' }}
+  layout="responsive"
+  naturalHeight={552}
+  naturalWidth={1600}
+/>
+
+2. Click the **Create Intent** button. Then a form will show on the right screen.
+3. In Intent **Type**, choose **Text** to start setup.
+4. Next, click the button **Add classifier**. This feature enables you to insert your NLUs inside the intent, so intent can match whether end-user input is understandable by the NLU or not. First, there is a dropdown to choose available NLUs, then select “topic-nl”.
+
+<FigureImage
+  alt="Image 4 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience/image4.webp"
+  caption={{ title: 'Figure 4', description: 'Add classifier feature.' }}
+  layout="responsive"
+  naturalHeight={973}
+  naturalWidth={1600}
+/>
+
+5. Then, click the button **Add attribute**. This feature enables you to insert your NLUs inside the intent, similar to the Add Classifier feature, with differentiation that bot developers can create a condition in the state or transition by using the entity’s label. It is because an attribute is a variable that has an array form.
+
+<FigureImage
+  alt="Image 5 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience/image5.webp"
+  caption={{ title: 'Figure 5', description: 'Add classifier feature.' }}
+  layout="responsive"
+  naturalHeight={1563}
+  naturalWidth={1600}
+/>
+
+6. Click **Create** to create an intent.
+
+## Test Your Chatbot
+
+1. To test your chatbot, you can see it in the bottom right corner of your screen.
+
+<FigureImage
+  alt="Image 6 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience/image6.webp"
+  caption={{ title: 'Figure 6', description: 'Emulator location.' }}
+  layout="responsive"
+  naturalHeight={1007}
+  naturalWidth={1600}
+/>
+
+2. Click the **Test Chatbot** to start.
+3. Type a sentence or word.
+4. You can see incoming messages that you typed (blue color) and bot response (white color) by clicking the eye icon under the message bubble.
+
+<FigureImage
+  alt="Image 7 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience/image7.webp"
+  caption={{ title: 'Figure 7', description: 'View detail in incoming message and outgoing message.' }}
+  layout="responsive"
+  naturalHeight={977}
+  naturalWidth={1600}
+/>
+
+Here is how to read the incoming message:
+
+<FigureImage
+  alt="Image 8 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience/image8.webp"
+  caption={{ title: 'Figure 8', description: 'Incoming message example.' }}
+  layout="responsive"
+  naturalHeight={408}
+  naturalWidth={632}
+/>
+
+- “type” means message source which is from the emulator
+- “owner” means the account that typed the message.
+
+For outgoing messages or bot responses, here is how to read them.
+
+<FigureImage
+  alt="Image 9 Alt"
+  src="/assets/images/products/kata-platform/how-to/how-to-use-nlu-threshold-to-enhance-customer-experience/image9.webp"
+  caption={{ title: 'Figure 9', description: 'Incoming message example.' }}
+  layout="responsive"
+  naturalHeight={580}
+  naturalWidth={848}
+/>
+
+- **“type”** means executed action type. For this example, it uses a text action type.
+- **“content”** means your message to test the bot.
+- **“action”** means executed action name.
+- **“flow”** means executed flow name.
+- **“intent”** means which intent recognized your message.
+
+This is the end of the guidance. You can contact <a href="mailto:support@kata.ai">support@kata.ai</a> if you have any difficulties when implementing this.

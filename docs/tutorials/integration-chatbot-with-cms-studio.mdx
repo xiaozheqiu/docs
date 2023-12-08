@@ -1,0 +1,341 @@
+---
+layout: tutorial
+imgSpot: /assets/images/tutorials/spot-cms-integration.webp
+id: integration-chatbot-with-cms-studio
+product: kata-platform
+title: Integration Chatbot with Kata CMS
+prev: integration-chatbot-with-nl-studio
+next: create-igdm-bot-handover-from-chatbot-to-agent
+---
+
+## Introduction
+
+CMS Studio allows you to build a dashboard for your chatbot. This dashboard lets your clients to add, edit, or remove certain contents of your bot.
+
+Previously, from [Bot studio tutorial](/tutorials/bot-studio/) we have learned how to create a Pizza Bot. So, in this tutorial we will learn how to set up a dashboard where your clients can edit bot response for “confirmPizza” and “Fallback” state.
+
+Before we begin, you need to read [CMS Studio](/cms-studio/about/) docs to learn the basic concepts of CMS Studio.
+
+## Set up CMS Studio
+
+We assume at this stage you already deployed your bot. If you haven't, you can learn how to on [Bot studio tutorial](/tutorials/bot-studio/).
+
+### Create Environment
+
+Click on Create Environment.
+
+<FigureImage src="/assets/images/tutorials/bot-cms/bcms-1.webp" alt="bcms-1" naturalHeight={1192} naturalWidth={2360} />
+
+Environment URL will be used as a web address where your client can access the dashboard. For demo purpose, we will name it “my-cms”
+
+<FigureImage src="/assets/images/tutorials/bot-cms/bcms-2.webp" alt="bcms-2" naturalHeight={994} naturalWidth={1538} />
+
+Click on Create to submit data. Successfully created environment will be seen as follow
+
+<FigureImage src="/assets/images/tutorials/bot-cms/bcms-3.webp" alt="bcms-3" naturalHeight={930} naturalWidth={1750} />
+
+### Create CMS Pages and Forms
+
+Go to CMS menu and select Pages. This menu is a place for you to arrange pages, forms and elements.
+
+<FigureImage src="/assets/images/tutorials/bot-cms/bcms-4.webp" alt="bcms-4" naturalHeight={1158} naturalWidth={2186} />
+
+Click “+” button to start a new page. In this use case, we will create a page named “Text Response” with label “textResponse”. Click Create then enter the page.
+
+<FigureImage src="/assets/images/tutorials/bot-cms/bcms-5.webp" alt="bcms-5" naturalHeight={978} naturalWidth={1480} />
+
+There is a breadcrumb on top left to indicate which page you are in. Click on “+” button to create a form
+
+<FigureImage src="/assets/images/tutorials/bot-cms/bcms-6.webp" alt="bcms-6" naturalHeight={1552} naturalWidth={2710} />
+
+Fill in the fields as follows
+
+<FigureImage src="/assets/images/tutorials/bot-cms/bcms-7.webp" alt="bcms-7" naturalHeight={938} naturalWidth={1644} />
+
+Then, click on “Order Pizza” form you've just created
+
+<FigureImage src="/assets/images/tutorials/bot-cms/bcms-8.webp" alt="bcms-8" naturalHeight={1232} naturalWidth={2078} />
+
+### Introduction to Text Box Element
+
+For the first use case, we will use Text Box elements to change bot response in confirmPizza State.
+
+Click on Text Box element in left sidebar to add it to your form.
+
+<FigureImage src="/assets/images/tutorials/bot-cms/bcms-9.webp" alt="bcms-9" naturalHeight={1264} naturalWidth={2922} />
+
+Added element is shown as above. Our next step is to fill in label and ID, and default value.
+
+- Label is a title for the element, so try to use any word that is easy to understand.
+- ID is used to define the element in bot. Every element's ID is unique, and will be used as a code later on.
+- Default value is the value you want to put on the bot, for example the copywriting.
+
+### Add Asking Confirmation Text to Form
+
+Fill in text box element as follow
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-10.webp"
+  alt="bcms-10"
+  naturalHeight={1158}
+  naturalWidth={2514}
+/>
+
+### Add Fallback Text to Form
+
+Fill in text box element as follow
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-11.webp"
+  alt="bcms-11"
+  naturalHeight={1194}
+  naturalWidth={2528}
+/>
+
+Then, click on Save button to save the structure.
+
+### Publish CMS
+
+After you saved your CMS structure, go to Pages. Afterwards, click Publish.
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-12.webp"
+  alt="bcms-12"
+  naturalHeight={1724}
+  naturalWidth={3358}
+/>
+
+Publish is a term that similar with commit in Git. You must publish your saved CMS before you create a deployment. Further explanation can be seen on [Deployment Guide](./deployment-guide/introduction/)
+
+## Invite User to CMS Client
+
+You can only invite Kata Platform users to Kata Dashboard. So make sure your client already has registered account on Kata Platform before you invite them. In the future update, we will support inviting non-Kata Platform users.
+
+Click on Users menu under CMS Studio
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-13.webp"
+  alt="bcms-13"
+  naturalHeight={1144}
+  naturalWidth={1806}
+/>
+
+Then, click on Add User button
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-14.webp"
+  alt="bcms-14"
+  naturalHeight={1258}
+  naturalWidth={1914}
+/>
+
+Next, Add User drawer will show
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-15.webp"
+  alt="bcms-15"
+  naturalHeight={1076}
+  naturalWidth={1780}
+/>
+
+Fill in e-mail and choose Development environment . Then click Add to send an invitation to that user's email.
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-16.webp"
+  alt="bcms-16"
+  naturalHeight={1086}
+  naturalWidth={2526}
+/>
+
+## Integrate Elements to Bot
+
+There are 3 things that we have defined on CMS, which are:
+
+- `Page_label` in Page (ex: `textResponse`)
+- `Form_label` in Form (ex: `orderPizza`)
+- `ID` in Element. (ex: `askingConfirmation`)
+
+This information will be used in Bot Studio to sync a value from your dashboard. To do that, we have to enter a code with this format on the action we want to sync:
+
+```
+$(cms.[page_label].[form_label].[element_ID].value)
+```
+
+### Change Value in confirmPizza State
+
+In this case, this is what we will put on `confirmPizza` action on Bot Studio.
+
+```
+$(cms.textResponse.orderPizza.askingConfirmation.value)
+```
+
+To update the action, you have to go back to Bot Studio and click on confirmPizza state.
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-17.webp"
+  alt="bcms-17"
+  naturalHeight={976}
+  naturalWidth={2092}
+/>
+
+Then, click on confirmPizza state. Replace the original text which is this:
+
+```
+Do you want to order $(context.pizza)?
+```
+
+with this code:
+
+```
+$(cms.textResponse.orderPizza.askingConfirmation.value)
+```
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-18.webp"
+  alt="bcms-18"
+  naturalHeight={1172}
+  naturalWidth={1878}
+/>
+
+Click Update Action to update your action. **Then click on Update** to update state.
+
+### Change Value in Fallback State
+
+Click on init state in fallback flow.
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-20.webp"
+  alt="bcms-20"
+  naturalHeight={1378}
+  naturalWidth={2106}
+/>
+
+Click on init state to update the action's value. Fill in the value as follows
+
+```
+$(cms.textResponse.orderPizza.sorryMessage.value)
+```
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-20.webp"
+  alt="bcms-20"
+  naturalHeight={1378}
+  naturalWidth={2106}
+/>
+
+Click Update Action to update your action. **Then click on Update** to update state.
+
+### Publish Your Bot
+
+Afterward, publish your bot by clicking Publish.
+
+## Deploy CMS & Bot Revision
+
+Go to Deploy menu to deploy the newest version of your bot. Click on New Deployment, choose any deployment version and fill in change log. Then, click on Submit.
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-21.webp"
+  alt="bcms-21"
+  naturalHeight={1252}
+  naturalWidth={2048}
+/>
+
+Then, go to Environment to change deployment. Click on more button to update.
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-22.webp"
+  alt="bcms-22"
+  naturalHeight={1188}
+  naturalWidth={2226}
+/>
+
+Next, click Update. Update environment drawer will appear.
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-23.webp"
+  alt="bcms-23"
+  naturalHeight={1154}
+  naturalWidth={1786}
+/>
+
+Choose latest deployment then click Update. Changes will be shown as follow
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-24.webp"
+  alt="bcms-24"
+  naturalHeight={1134}
+  naturalWidth={1486}
+/>
+
+## Customize Content in CMS Client
+
+Your invited user will receive an email containing the dashboard's URL or you can give them direct URL yourselves.
+
+### Enter CMS using E-mail
+
+If you get an e-mail, click on Accept Invitation then you will be redirected to login page
+
+### Enter CMS using Link
+
+Click on link for CMS client such as dashboard.kata.ai/(namespace). For this tutorial, we will access <a href="https://dashboard.kata.ai/login/my-cms" target="_blank">https://dashboard.kata.ai/my-cms</a>
+
+The front page of Kata Dashboard looks like this
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-25.webp"
+  alt="bcms-25"
+  naturalHeight={1624}
+  naturalWidth={2944}
+/>
+
+Click on Login after you filled in username/e-mail and password.
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-26.webp"
+  alt="bcms-26"
+  naturalHeight={1730}
+  naturalWidth={3358}
+/>
+
+### Edit Content in CMS Client
+
+Click on available form which is “Order Pizza”
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-27.webp"
+  alt="bcms-27"
+  naturalHeight={1702}
+  naturalWidth={3292}
+/>
+
+Fill in those elements with sentences that you want. For example:
+
+```
+Asking confirmation: You're almost done. Do you want to order $(context.pizza)?
+Fallback: Hmm, I don't understand that. How about we talk other things?
+
+```
+
+Click on Save icon to save in each element.
+
+## Show Changes in LINE
+
+After you changed your deployment in environment, you can test directly in your bot's LINE account.
+
+Testing for confirmation:
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-28.webp"
+  alt="bcms-28"
+  naturalHeight={1920}
+  naturalWidth={1080}
+/>
+
+Testing for fallback:
+
+<FigureImage
+  src="/assets/images/tutorials/bot-cms/bcms-29.webp"
+  alt="bcms-29"
+  naturalHeight={1920}
+  naturalWidth={1080}
+/>

@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "Integration Chatbot with Kata CMS",
+          "useAccordion": true,
+          "items": [
+            { "url": "#introduction", "title": "Introduction" },
+            {
+              "url": "#set-up-cms-studio",
+              "title": "Set up CMS Studio"
+            },
+            { "url": "#invite-user-to-cms-client", "title": "Invite User to CMS Client" },
+            {
+              "url": "#integrate-elements-to-bot",
+              "title": "Integrate Elements to Bot"
+            },
+            { "url": "#deploy-cms--bot-revision", "title": "Deploy CMS & Bot Revision" },
+            {
+              "url": "#customize-content-in-cms-client",
+              "title": "Customize Content in CMS Client"
+            },
+            { "url": "#show-changes-in-line", "title": "Show Changes in LINE" }
+          ]
+        }
+      ]
+    }
+  ]
+}

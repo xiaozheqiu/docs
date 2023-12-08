@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "How to use Freshchat for your chatbot",
+          "useAccordion": true,
+          "items": [
+            { "url": "#deploy-your-chatbot", "title": "Deploy your chatbot" },
+            {
+              "url": "#how-to-generate-api-token",
+              "title": "How to generate API Token"
+            },
+            {
+              "url": "#how-to-generate-actor-id",
+              "title": "How to generate Actor ID"
+            },
+            {
+              "url": "#finalize-freshchat-set-up",
+              "title": "Finalize Freshchat set up"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

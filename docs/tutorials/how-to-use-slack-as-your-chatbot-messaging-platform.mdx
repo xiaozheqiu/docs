@@ -1,0 +1,225 @@
+---
+layout: tutorial
+title: How to use Slack as your chatbot messaging platform
+id: how-to-use-slack-as-your-chatbot-messaging-platform
+imgSpot: /assets/images/tutorials/spot-slack.webp
+product: kata-platform
+date: '2021-08-26T07:00:00+07:00'
+---
+
+Slack is a messaging platform that is commonly used for office and community. In this tutorial, you will learn how to deploy your chatbot to the Slack channel. So, let’s get started.
+
+## Deploy your chatbot
+
+1. Click **Deploy** menu in the left sidebar
+2. On the Deploy page, click on the **New Deployment** button in the top right corner. It will open up the Create Deployment menu.
+3. Choose any deployment version you want to deploy and fill in the changelog.
+
+<FigureImage
+  caption={{ title: 'Figure 1', description: `Create a new deployment` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image1.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={1600}
+  naturalWidth={1133}
+/>
+
+4. Click **Submit** to finish the deployment
+
+If you already have an environment created, skip these steps.
+
+1. Go to the **Deployments > Environment** menu.
+
+<FigureImage
+  caption={{ title: 'Figure 2', description: `Set up environment, then set up Slack channel` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image2.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={505}
+  naturalWidth={1600}
+/>
+
+2. Click the **Create Environment** button in any environment. You will see a drawer to create a new environment.
+3. Choose the **development version** you want (in this tutorial, we use the 1.0.0 version)
+4. Fill in the **environment URL**. This environment URL is used for CMS. Learn more about CMS.
+5. Click **Create** to create the environment.
+6. Created environment now has a **Create Channel** button.
+
+Continue to choose Slack as a chatbot channel.
+
+1. Click the **Create Channel** button to start adding channels to the environment. It will open up the Channel menu within the environment.
+2. Click the ”**+ Create Channel**” button in the channel table list. A menu to set up the channel will be shown.
+3. Choose **Slack** in Channel Type.
+
+<FigureImage
+  caption={{ title: 'Figure 3', description: `Create Slack channel` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image3.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={872}
+  naturalWidth={1434}
+/>
+
+<Table>
+  <TableHead>
+    <TableHeadRow>
+      <TableHeadCell>Field Name</TableHeadCell>
+      <TableHeadCell>Functionality</TableHeadCell>
+      <TableHeadCell>Limitation</TableHeadCell>
+    </TableHeadRow>
+  </TableHead>
+  <TableBody>
+    <TableBodyRow>
+      <TableBodyCell>Name</TableBodyCell>
+      <TableBodyCell>Your channel name</TableBodyCell>
+      <TableBodyCell>
+        Max. 30 characters must contain only alphanumeric characters (A-Z, a-z, 0-9), `-`, and `_`.
+      </TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Bot Token</TableBodyCell>
+      <TableBodyCell>Slack token</TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+</Table>
+
+## Create Slack app
+
+1. First thing first, you need to sign in into your Slack Team to create a new app and get its token. After logging in, open this URL <a href="https://api.slack.com/slack-apps" target="_blank"><span>http</span>s://api.slack.com/slack-apps</a>.
+2. Click on the **“Create an App”** button, then choose **“From scratch”**.
+3. Fill in the required fields. Next, choose your “**Development Slack Team**”.
+
+<FigureImage
+  caption={{ title: 'Figure 4', description: `Create a Slack app` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image4.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={852}
+  naturalWidth={1919}
+/>
+
+4. Click the “**Create App**” button.
+5. Open **“OAuth & Permissions”** in the **“Scopes”** section. You should fill in the add permission by clicking **“Add an OAuth Scope”**.
+
+<FigureImage
+  caption={{ title: 'Figure 5', description: `Add an OAuth Scope` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image5.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={437}
+  naturalWidth={741}
+/>
+
+6. Scroll up to the section **"OAuth Token for Your Workspace"**, then click **"Install to Workspace"**.
+
+<FigureImage
+  caption={{ title: 'Figure 6', description: `Install to Workspace` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image6.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={748}
+  naturalWidth={733}
+/>
+
+7. Click the **“Allow”** button.
+8. Still in the **“OAuth & Permissions”**, you will get **“OAuth Token for Your Workspace”** and **“Bot User OAuth Token”**. Copy this **“Bot User OAuth Token”** to deploy our bot using the Kata Platform.
+
+Next step is to paste the access token from Slack to the Kata Platform.
+
+1. Go back to Kata Platform (<a href="https://platform.kata.ai" target="_blank"><span>http</span>s://platform.kata.ai</a>)
+2. Paste the **Bot User OAuth Token** there. Here is the example:
+
+<FigureImage
+  caption={{ title: 'Figure 7', description: `Paste Bot User OAuth Token from Slack here.` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image7.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={638}
+  naturalWidth={1999}
+/>
+
+3. Click **Create** to generate the webhook. You can see a webhook URL from the generated channel.
+4. Click the copy icon to copy the webhook URL.
+
+<FigureImage
+  caption={{ title: 'Figure 8', description: `Copy webhook URL` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image8.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={386}
+  naturalWidth={1999}
+/>
+
+## Finalize Slack set up
+
+1. Go back to Slack <a href="https://api.slack.com/slack-apps" target="_blank"><span>http</span>s://api.slack.com/slack-apps</a>
+2. Then, click on the “**Event Subscriptions**” tab.
+
+<FigureImage
+  caption={{ title: 'Figure 9', description: `Event Subscription menu.` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image9.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={648}
+  naturalWidth={1060}
+/>
+
+3. Next, turn on the “**Enable Events**” toggle.
+
+<FigureImage
+  caption={{ title: 'Figure 10', description: `Turn on Enable Events toggle.` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image10.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={1023}
+  naturalWidth={1999}
+/>
+
+4. You will see the “**Request URL**” field. Then, paste the **webhook URL**.
+
+<FigureImage
+  caption={{ title: 'Figure 11', description: `Request URL` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image11.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={1264}
+  naturalWidth={1999}
+/>
+
+5. Expand the “**Subscribe to bot events**” then **“add Bot User Event”** like in the below image.
+
+<FigureImage
+  caption={{ title: 'Figure 12', description: ` Subscribe to bot events` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image12.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={656}
+  naturalWidth={1049}
+/>
+
+6. Next, click **“App Home”**, go to the section **“Your App’s Presence in the Slack”** then turn on **“Always Show My Bot as Online“** toggle.
+
+<FigureImage
+  caption={{ title: 'Figure 13', description: `Turn on “Always Show My Bot as Online“ toggle.` }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image13.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={1549}
+  naturalWidth={1999}
+/>
+
+7. Next, go to section **Show tabs**, then click the checkbox **“Allow user to send slash commands and messages from messages tab”** to make sure your user can send direct messages to your bot.
+
+<FigureImage
+  caption={{
+    title: 'Figure 14',
+    description: `Click the checkbox “Allow user to send slash commands and messages from messages tab”`,
+  }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image14.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={1192}
+  naturalWidth={1508}
+/>
+
+8. Go to your slack, click **“Add apps”**, then search your bot name, and finally, now you can share your newly created chatbot with your friends.
+
+<FigureImage
+  caption={{
+    title: 'Figure 15',
+    description: `Successfully deployed Slack bot`,
+  }}
+  src="/assets/images/tutorials/how-to-use-slack-as-your-chatbot-messaging-platform/image15.webp"
+  alt="How to use Slack as your chatbot messaging platform"
+  naturalHeight={988}
+  naturalWidth={818}
+/>
+
+This is the end of the guidance, you can contact support@kata.ai if you have any difficulties when implementing this.

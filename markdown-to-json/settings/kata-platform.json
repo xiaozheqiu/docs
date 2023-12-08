@@ -1,0 +1,9 @@
+{
+  "name": "kata-platform",
+  "cwd": "./",
+  "src": "./docs/kata-platform",
+  "filePattern": "**/*.mdx",
+  "dist": "./markdown-to-json/outputs/kata-platform.json",
+  "metadata": true,
+  "deterministicOrder": false
+}

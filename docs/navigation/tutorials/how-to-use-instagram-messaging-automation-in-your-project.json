@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "How to use Instagram Messaging automation in your project",
+          "useAccordion": true,
+          "items": [
+            { "url": "#instagram-messaging-features", "title": "Instagram Messaging Features" },
+            {
+              "url": "#deploy-your-chatbot",
+              "title": "Deploy Your Chatbot"
+            },
+            {
+              "url": "#faq",
+              "title": "FAQ"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

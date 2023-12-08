@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "How to deploy your chatbot to LINE",
+          "useAccordion": true,
+          "items": [
+            { "url": "#create-a-deployment", "title": "Create a Deployment" },
+            {
+              "url": "#integration-to-a-channel",
+              "title": "Integration to a channel"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

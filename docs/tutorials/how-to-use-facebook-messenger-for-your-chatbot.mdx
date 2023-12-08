@@ -1,0 +1,220 @@
+---
+layout: tutorial
+id: how-to-use-facebook-messenger-for-your-chatbot
+imgSpot: /assets/images/tutorials/spot-facebook-messenger.webp
+product: kata-platform
+title: How to use Facebook Messenger for your chatbot
+date: '2021-08-26T07:00:00+07:00'
+---
+
+Facebook Messenger (commonly known as Messenger) is a messaging app and platform developed by Facebook. In this section, we will learn to connect our bot with Messenger. Then, you can use this [simple bot tutorial](/kata-platform/documentation-content/start-your-first-chatbot) to integrate your bot with Messenger.
+
+## Deploy your chatbot
+
+1. Click the **Deploy** menu in the left sidebar.
+2. On the Deploy page, click on the **New Deployment** button in the top right corner. It will open up the Create Deployment menu.
+3. Choose any deployment version you want to deploy and fill in the changelog.
+
+<FigureImage
+  caption={{ title: 'Figure 1.', description: `Create a new deployment` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image1.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={1600}
+  naturalWidth={1133}
+/>
+
+4. Click **Submit** to finish the deployment.
+
+If you already have an environment created, skip these steps.
+
+1.  Go to the **Deployments > Environment** menu.
+
+<FigureImage
+  caption={{ title: 'Figure 2.', description: `Set up the environment, then set up the WhatsApp channel.` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image2.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={505}
+  naturalWidth={1600}
+/>
+
+2.  Click the **Create Environment** button in any environment. You will see a drawer to create a new environment.
+3.  Choose the **development version** you want (in this tutorial, we use the 1.0.0 version)
+4.  Fill in the **environment URL**. This environment URL is used for CMS.[ Learn more about CMS](https://docs.kata.ai/cms-studio/about/').
+5.  Click **Create** to create the environment.
+6.  Created environment now has a **Create Channel** button.
+
+Continue to choose FB Messenger as a chatbot channel.
+
+1. Click the **Create Channel **button to start adding channels to the environment. It will open up the Channel menu within the environment.
+2. Click the ”**+ Create Channel**” button in the channel table list. It will show a menu to set up the channel.
+3. Choose **FB Messenger** in Channel Type.
+
+<FigureImage
+  caption={{ title: 'Figure 3.', description: `Create FB Messenger channel` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image3.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={1048}
+  naturalWidth={1516}
+/>
+
+<Table>
+  <TableHead>
+    <TableHeadRow>
+      <TableHeadCell>Field Name</TableHeadCell>
+      <TableHeadCell>Functionality</TableHeadCell>
+      <TableHeadCell>Limitation</TableHeadCell>
+    </TableHeadRow>
+  </TableHead>
+  <TableBody>
+    <TableBodyRow>
+      <TableBodyCell>Name</TableBodyCell>
+      <TableBodyCell>Your channel name</TableBodyCell>
+      <TableBodyCell>
+        Max. 30 characters must contain only alphanumeric characters (A-Z, a-z, 0-9), `-`, and `_`.
+      </TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Page Access Token</TableBodyCell>
+      <TableBodyCell>
+        These are required fields from Facebook to ensure security with third-party applications. In addition, you can
+        find the Page Access Token and App Secret in Facebook Developer.
+      </TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>App Secret</TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+      <TableBodyCell>-</TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+</Table>
+
+## How to get Page Access Token
+
+1.  First, you have to sign in (register first, if you don’t have a Facebook account) to [https://developers.facebook.com/](https://developers.facebook.com/)
+2.  Then, create a new app for your bot.
+
+<FigureImage
+  caption={{ title: 'Figure 4.', description: `Create a new app for your bot.` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image4.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={728}
+  naturalWidth={1364}
+/>
+
+3.  Go to **Messenger > Settings**. You will see the Access Tokens field.
+
+<FigureImage
+  caption={{ title: 'Figure 5.', description: `Access Tokens section inside Messenger > Settings menu.` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image5.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={670}
+  naturalWidth={1364}
+/>
+
+4.  To get the access token, you need to add a Facebook Page. First, click **Create New Page** to create a new page. Then, continue to create a page by following the instructions.
+5.  Click **Generate Token** to generate your access token, then copy it to your channel in the Platform.
+
+<FigureImage
+  caption={{ title: 'Figure 6.', description: `Generate Token button` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image6.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={698}
+  naturalWidth={1364}
+/>
+
+The next step is to paste the access token from Facebook to the Kata Platform.
+
+1.  Go back to Kata Platform ([https://platform.kata.ai](https://platform.kata.ai))
+2.  Paste the Page Access Token there. Here is the example:
+
+<FigureImage
+  caption={{ title: 'Figure 7.', description: `Paste access token to the Page Access Token field.` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image7.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={1078}
+  naturalWidth={1598}
+/>
+
+Let’s continue to get App Secret.
+
+## How to get App Secret
+
+1. Go to **“Settings” → “Basic”** to find the App Secret.
+2. Click **“Show,”** then copy the App Secret.
+
+<FigureImage
+  caption={{ title: 'Figure 8.', description: `Showing App Secret.` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image8.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={702}
+  naturalWidth={1364}
+/>
+
+The next step is to paste the access token from Facebook to the Kata Platform.
+
+1.  Go back to Kata Platform ([https://platform.kata.ai](https://platform.kata.ai))
+2.  Paste the App Secret there. Here is the example:
+
+<FigureImage
+  caption={{ title: 'Figure 9.', description: `Paste App Secret from Facebook here.` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image9.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={1055}
+  naturalWidth={1600}
+/>
+
+3.  Click **Create** to generate the webhook. You can see a webhook URL from the generated channel.
+4.  Click the copy icon to copy the webhook URL.
+
+<FigureImage
+  caption={{ title: 'Figure 10.', description: `Copy webhook URL.` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image10.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={325}
+  naturalWidth={1600}
+/>
+
+## Finalize Set up in Facebook
+
+### Paste webhook URL to Facebook
+
+1. Go to the Webhooks field in the **“Messenger” → “Settings.”**
+2. Fill the **“Callback URL”** with a webhook URL from a channel you’ve made in the Kata Platform.
+
+### Paste Challenge Token to Facebook
+
+1. To get Challenge Token from your channel, you need to click on the top of the column to trigger the **View Channel** drawer.
+
+<FigureImage
+  caption={{ title: 'Figure 11.', description: ` Challenge Token located in View Channel drawer.` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image11.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={1422}
+  naturalWidth={1388}
+/>
+
+2. Block content inside the Challenge Token field, then copy it.
+3. Go back to the [https://developers.facebook.com/](https://developers.facebook.com/)
+
+4. Next, paste the challenge token in **“Verify Token”** from the Kata Platform.
+
+<FigureImage
+  caption={{ title: 'Figure 12.', description: `Fill in challenge token in Verify Token field.` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image12.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={698}
+  naturalWidth={1365}
+/>
+
+5. Finally, click **“Add Subscription”** and check the **“messages”** and **“messaging_postbacks”** checklist.
+
+<FigureImage
+  caption={{ title: 'Figure 13.', description: `Fill in the checklist in messages and messaging_postbacks.` }}
+  src="/assets/images/tutorials/how-to-use-facebook-messenger-for-your-chatbot/image13.webp"
+  alt="How to use Facebook Messenger for your chatbot"
+  naturalHeight={698}
+  naturalWidth={1364}
+/>
+
+It is the end of the guidance. You can contact [support@kata.ai](mailto:support@kata.ai) if you have any difficulties when implementing this.

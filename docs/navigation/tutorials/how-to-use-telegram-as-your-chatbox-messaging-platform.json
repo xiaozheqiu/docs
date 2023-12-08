@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "How to use Telegram as your chatbot messaging platform",
+          "useAccordion": true,
+          "items": [
+            { "url": "#create-a-deployment", "title": "Create a deployment " },
+            {
+              "url": "#integration-to-a-channel",
+              "title": "Integration to a channel"
+            },
+            {
+              "url": "#connect-chatbot-to-telegram",
+              "title": "Connect chatbot to Telegram"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

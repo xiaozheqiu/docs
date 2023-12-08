@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "title": "Tutorial",
+      "items": [
+        {
+          "title": "How to use Slack as your chatbot messaging platform",
+          "useAccordion": true,
+          "items": [
+            { "url": "#deploy-your-chatbot", "title": "Deploy your chatbot" },
+            {
+              "url": "#create-slack-app",
+              "title": "Create Slack app"
+            },
+            {
+              "url": "#finalize-slack-set-up",
+              "title": "Finalize Slack set up"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
